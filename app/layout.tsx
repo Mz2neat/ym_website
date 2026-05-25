@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} h-full antialiased`}
     >
-      <body className="bg-black text-white min-h-full flex flex-col"><Navbar />{children}</body>
+      <body className="bg-[#0B0F14] text-white min-h-full flex flex-col"><Navbar />{children}</body>
     </html>
   );
 }
