@@ -12,10 +12,10 @@ export default function Home(){
     //Main Top Part
     <main className="relative min-h-screen overflow-y-auto no-scrollbar">
       <div className="relative z-15">
-      <h1 className="text-[#2683EB] ml-32 mt-16 text-xl">WELCOME TO YOUNG MUSLIMS</h1>
-      <h1 className="text-white ml-32 mt-5 text-8xl max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
-      <h1 className="ml-32 mt-10 text-xl font-medium">A community for growth, knowledge, and positive change.</h1>
-      <h1 className="ml-32 text-xl font-medium">Join us in building a stronger Ummah</h1>
+      <h1 className="text-[#2683EB] ml-32 mt-16 text-2xl">WELCOME TO YOUNG MUSLIMS</h1>
+      <h1 className="text-white ml-32 mt-5 text-8xl max-w-4xl font-medium">Empowering Young Muslims. Inspiring Tomorrow.</h1>
+      <h1 className="ml-32 mt-10 text-2xl font-medium">A community for growth, knowledge, and positive change.</h1>
+      <h1 className="ml-32 text-2xl font-medium">Join us in building a stronger Ummah</h1>
       </div>
       {/*Gradient Image in Background*/}
       <div className="absolute top-0 right-0 w-[1300px] h-screen overflow-hidden">
