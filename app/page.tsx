@@ -13,7 +13,7 @@ export default function Home(){
     <main className="relative min-h-screen overflow-y-auto no-scrollbar">
       <div className="relative z-15">
       <h1 className="text-[#2683EB] ml-32 mt-16 text-2xl">WELCOME TO YOUNG MUSLIMS</h1>
-      <h1 className="text-white ml-32 mt-5 text-8xl max-w-4xl font-medium">Empowering Young Muslims. Inspiring Tomorrow.</h1>
+      <h1 className="text-white ml-32 mt-5 text-8xl max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
       <h1 className="ml-32 mt-10 text-2xl font-medium">A community for growth, knowledge, and positive change.</h1>
       <h1 className="ml-32 text-2xl font-medium">Join us in building a stronger Ummah</h1>
       </div>
@@ -26,6 +26,7 @@ export default function Home(){
       
       {/*Buttons*/}
 
+<div className="">
       <Link href="/join" className="relative z-15">
       <button className="rounded-lg bg-blue-800 mt-10 ml-32 font-medium px-10 py-6 hover:bg-white hover:text-black text-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
       Join our Community
@@ -38,17 +39,18 @@ export default function Home(){
       <MoveRight className="w-10 h-10 inline-flex ml-4"/>
       </button>
       </Link>
+      </div>
 
       {/*Mission Statement and Vision Statement*/}
 
 
-      <motion.div className="bg-black border border-3 border-[#2683EB] mt-32 mx-auto bg-blue relative z-15 h-40 w-[85%] max-w-9xl rounded-xl mb-32 flex" initial={{opacity: 0, y:50}} whileInView={{opacity: 1, y:0}} transition={{duration:0.8}} viewport={{once:true}}>
+      <motion.div className="bg-black border border-3 border-[#2683EB] mt-32 mx-auto bg-blue relative z-15 h-auto w-[85%] max-w-9xl rounded-xl mb-32 flex" initial={{opacity: 0, y:50}} whileInView={{opacity: 1, y:0}} transition={{duration:0.8}} viewport={{once:true}}>
         
         <div className="mx-auto">
           <div className="text-[#2683EB] ml-16 mt-5 text-xl font-medium">
           Our Vision
           </div>
-          <div className="ml-16 max-w-128 text-xl font-medium">
+          <div className="ml-16 max-w-128 text-xl font-medium mb-8">
             
           Canadian Muslim youth collectively contributing to the betterment of society with God-consciousness and a firm understanding of their Muslim identity.
           </div>
@@ -60,7 +62,7 @@ export default function Home(){
           <div className="text-[#2683EB] ml-16 mt-5 text-xl font-medium">
           Our Mission
           </div>
-          <div className="ml-16 max-w-128 text-xl font-medium">
+          <div className="ml-16 max-w-128 text-xl font-medium mb-8">
           Mentoring Muslim youth through companionship, education, and service, Young Muslims seek the pleasure of Allah (SWT).
           </div>
           </div>
