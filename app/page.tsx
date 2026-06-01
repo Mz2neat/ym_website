@@ -12,8 +12,8 @@ export default function Home(){
     //Main Top Part
     <main className="relative min-h-screen overflow-y-auto no-scrollbar">
       <div className="relative z-15">
-      <h1 className="text-[#2683EB] ml-32 mt-16 text-2xl">WELCOME TO YOUNG MUSLIMS</h1>
-      <h1 className="text-white ml-32 mt-5 text-8xl max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
+      <h1 className="text-[#2683EB] ml-32 mt-16 text-lg md:text-xl lg:text-2xl">WELCOME TO YOUNG MUSLIMS</h1>
+      <h1 className="text-white ml-32 mt-5 text-4xl md:text-6xl lg:text-8xl max-w-4xl md:max-w-4xl lg:max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
       <h1 className="ml-32 mt-10 text-2xl font-medium">A community for growth, knowledge, and positive change.</h1>
       <h1 className="ml-32 text-2xl font-medium">Join us in building a stronger Ummah</h1>
       </div>
