@@ -40,21 +40,30 @@ export default function Activities(){
 {/*Halaqah Section*/}
 
 <motion.div 
-        className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[85%] max-w-7xl rounded-2xl mb-16 flex"
+        className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[85%] max-w-8xl rounded-2xl mb-16 flex"
         initial={{opacity: 0, y:50}} 
         whileInView={{opacity: 1, y:0}} 
         transition={{duration:0.8}} 
         viewport={{once:true}}
       >
-        <div className="mb-6 w-full">
-          <div className="text-[#2683EB] ml-16 mt-5 text-3xl font-medium">
+        <div className="mb-6 w-[50%] ">
+          <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium relative z-15">
             Halaqahs
           </div>
-          <div className="text-white ml-16 text-2xl font-medium mt-2 mr-16">
-            Our activities are designed to be the perfect balance of spiritual growth and high-energy fun. Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It’s about learning the Deen while building brotherhood in a space where you truly belong.
-          </div>
-          <div className="flex justify-center mb-4">
-            <button className="border-2 border-[#2683EB] bg-[#0B0F14] text-white rounded-2xl mt-10 font-medium px-10 py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
+            <div>
+              <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16 relative z-15">
+                Our activities are designed to be the perfect balance of spiritual growth and high-energy fun. Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It’s about learning the Deen while building brotherhood in a space where you truly belong.
+              </div>
+              <div>
+                <div className="">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,transparent_5%,#0B0F14_70%)] z-10">
+                  </div>
+                  <Image className="scale-100" src="/images/placeholderHalaqahs.png" fill alt="Halaqahs"></Image>
+                </div>
+              </div>
+            </div>
+          <div className="flex justify-center mb-4 relative z-15">
+            <button className="border-2 border-[#2683EB] bg-[#0B0F14] text-white rounded-2xl text-xl md:text-2xl lg:text-3xl mt-10 font-medium px-10 py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
               Find a Halaqah
             </button>
           </div>
@@ -62,22 +71,21 @@ export default function Activities(){
       </motion.div>
 
       {/* Sports & Retreat Section Wrapper */}
-      {/* FIX: This is just a normal grid container now */}
-      <div className="grid grid-cols-2 gap-8 mx-auto w-[85%] max-w-7xl relative z-20 mb-32">
+      <div className="grid grid-cols-2 gap-8 mx-auto w-[85%] max-w-8xl relative z-20 mb-32">
         
         {/* Sports Section */}
         <motion.div 
-          className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-auto rounded-2xl"
+          className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-168 rounded-2xl"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
           viewport={{once:true}}
         >
           <div className="mb-6">
-            <div className="text-[#2683EB] ml-16 mt-5 text-3xl font-medium">
+            <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium">
               Sports
             </div>
-            <div className="text-white ml-16 text-2xl font-medium mt-2 mr-16">
+            <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
             </div>
           </div>
@@ -92,10 +100,10 @@ export default function Activities(){
           viewport={{once:true}}
         >
           <div className="mb-6">
-            <div className="text-[#2683EB] ml-16 mt-5 text-3xl font-medium">
+            <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium">
               Retreat
             </div>
-            <div className="text-white ml-16 text-2xl font-medium mt-2 mr-16">
+            <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
             </div>
           </div>
