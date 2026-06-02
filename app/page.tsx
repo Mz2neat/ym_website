@@ -18,10 +18,10 @@ export default function Home(){
       <h1 className="ml-32 text-2xl font-medium">Join us in building a stronger Ummah</h1>
       </div>
       {/*Gradient Image in Background*/}
-      <div className="absolute top-0 right-0 w-[1300px] h-screen overflow-hidden">
+      <div className="absolute top-0 right-0 w-[1400px] h-screen overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#0B0F14_70%)] z-10">
       </div>
-      <Image className="object-cover scale-130" src="/images/IslamicArchitecture.png" fill alt="Islamic Architecture Design"/>
+      <Image className="object-cover scale-80 -translate-y-24 translate-x-35" src="/images/YMLogoV2.png" fill alt="Islamic Architecture Design"/>
       </div>
       
       {/*Buttons*/}

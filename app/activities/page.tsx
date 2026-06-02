@@ -35,31 +35,24 @@ export default function Activities(){
               <div className="absolute top-0 right-0 w-[1300px] h-screen overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#0B0F14_70%)] z-10">
               </div>
-              <Image className="object-cover scale-130" src="/images/FillerImage.jpeg" fill alt="Islamic Architecture Design"/>
+              <Image className="object-cover object-left scale-100" src="/images/YMRetreat.jpeg" fill alt="Background Image"/>
               </div>
 {/*Halaqah Section*/}
 
 <motion.div 
-        className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[85%] max-w-8xl rounded-2xl mb-16 flex"
+        className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[85%] max-w-8xl rounded-2xl mb-16 flex"
         initial={{opacity: 0, y:50}} 
         whileInView={{opacity: 1, y:0}} 
         transition={{duration:0.8}} 
         viewport={{once:true}}
       >
-        <div className="mb-6 w-[50%] ">
+        <div className="mb-6 w-[50%]">
           <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium relative z-15">
             Halaqahs
           </div>
             <div>
               <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16 relative z-15">
                 Our activities are designed to be the perfect balance of spiritual growth and high-energy fun. Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It’s about learning the Deen while building brotherhood in a space where you truly belong.
-              </div>
-              <div>
-                <div className="">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,transparent_5%,#0B0F14_70%)] z-10">
-                  </div>
-                  <Image className="scale-100" src="/images/placeholderHalaqahs.png" fill alt="Halaqahs"></Image>
-                </div>
               </div>
             </div>
           <div className="flex justify-center mb-4 relative z-15">
@@ -68,14 +61,39 @@ export default function Activities(){
             </button>
           </div>
         </div>
+
+        <div className="relative w-[50%] [mask-image:linear-gradient(to_right,transparent,black_20%)]">
+          <Image className="object-right object-cover" src="/images/Halaqah2.jpeg" fill alt="Halaqahs"></Image>
+        </div>
       </motion.div>
 
       {/* Sports & Retreat Section Wrapper */}
       <div className="grid grid-cols-2 gap-8 mx-auto w-[85%] max-w-8xl relative z-20 mb-32">
         
+        {/* Retreat Section */}
+        <motion.div 
+          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-164 rounded-2xl flex flex-col"
+          initial={{opacity: 0, y:50}} 
+          whileInView={{opacity: 1, y:0}} 
+          transition={{duration:0.8}} 
+          viewport={{once:true}}
+        >
+          <div className="mb-6">
+            <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium">
+              Retreat
+            </div>
+            <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
+            </div>
+          </div>
+          <div className="relative h-128 [mask-image:linear-gradient(to_bottom,transparent,black_20%)]">
+          <Image className="object-bottom object-cover scale-100" src="/images/YMRetreat2.jpeg" fill alt="Retreat"></Image>
+        </div>
+        </motion.div>
+
         {/* Sports Section */}
         <motion.div 
-          className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-168 rounded-2xl"
+          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-164 rounded-2xl flex flex-col"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
@@ -89,23 +107,8 @@ export default function Activities(){
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
             </div>
           </div>
-        </motion.div>
-
-        {/* Retreat Section */}
-        <motion.div 
-          className="transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-auto rounded-2xl"
-          initial={{opacity: 0, y:50}} 
-          whileInView={{opacity: 1, y:0}} 
-          transition={{duration:0.8, delay: 0.2}} 
-          viewport={{once:true}}
-        >
-          <div className="mb-6">
-            <div className="text-[#2683EB] ml-16 mt-5 text-xl md:text-2xl lg:text-3xl font-medium">
-              Retreat
-            </div>
-            <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
-            </div>
+          <div className="relative h-128 [mask-image:linear-gradient(to_bottom,transparent,black_20%)]">
+          <Image className="object-cover object-left" src="/images/BasketballCropped.jpg" fill alt="Sports"></Image>
           </div>
         </motion.div>
               

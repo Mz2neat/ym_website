@@ -7,13 +7,13 @@ import Image from "next/image";
 
 export default function Navbar(){
     return(
-        <nav className="flex items-center justify-between p-4 bg-black text-xl text-white">
+        <nav className="flex items-center justify-between p-4 bg-black text-xs md:text-lg lg:text-xl text-white">
             <div className="flex-1">
                 <Link href="/">
                 <Image
-                src="/images/YMLogo.png"
+                src="/images/YMLogoTransparentCrop.png"
                 alt="YM Logo"
-                width={130}
+                width={110}
                 height={50}
                 />
                 </Link>
