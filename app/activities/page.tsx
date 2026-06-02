@@ -40,7 +40,7 @@ export default function Activities(){
 {/*Halaqah Section*/}
 
 <motion.div 
-        className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[85%] max-w-8xl rounded-2xl mb-16 flex"
+        className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[75%] max-w-8xl rounded-2xl mb-16 flex"
         initial={{opacity: 0, y:50}} 
         whileInView={{opacity: 1, y:0}} 
         transition={{duration:0.8}} 
@@ -68,11 +68,11 @@ export default function Activities(){
       </motion.div>
 
       {/* Sports & Retreat Section Wrapper */}
-      <div className="grid grid-cols-2 gap-8 mx-auto w-[85%] max-w-8xl relative z-20 mb-32">
+      <div className="grid grid-cols-2 gap-8 mx-auto w-[75%] max-w-8xl relative z-20 mb-32">
         
         {/* Retreat Section */}
         <motion.div 
-          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-164 rounded-2xl flex flex-col"
+          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
@@ -93,7 +93,7 @@ export default function Activities(){
 
         {/* Sports Section */}
         <motion.div 
-          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-164 rounded-2xl flex flex-col"
+          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
