@@ -14,12 +14,12 @@ export default function about() {
             include something like whast is the mission and vision of YM here. or What is YM about.
           </h1>
           </section>
-          <div className="mx-auto mt-16 flex max-w-5xl flex-col gap-8 md:flex-row text-center"> 
+          <div className="mx-auto mt-16 flex max-w-[99%] flex-col gap-8 md:flex-row text-center"> 
             <div className="md:w-1/2">
               <h2 className="text-2xl font-bold text-white">
                  Mission Statement 
               </h2>
-                <p className="mt-4 text-lg leading-8 text-gray-300">
+                <p className="mt-4 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto">
 
          Young Muslims seek to mentor Muslim youth through companionship, education, and service, 
          while nurturing their Islamic identity, leadership, and commitment to the pleasure of Allah (SWT). 
@@ -30,7 +30,7 @@ export default function about() {
               <h2 className="text-2xl font-bold text-white">
                   Vision Statement
               </h2>
-                <p className="mt-4 text-lg leading-8 text-gray-300">
+                <p className="mt-4 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto">
 
          Canadian Muslim youth collectively contributing to the betterment of society with God-consciousness and a firm understanding of their Muslim identity. 
 
