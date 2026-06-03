@@ -52,7 +52,7 @@ export default function Activities(){
           </div>
             <div>
               <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16 relative z-15">
-                Our activities are designed to be the perfect balance of spiritual growth and high-energy fun. Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It’s about learning the Deen while building brotherhood in a space where you truly belong.
+                Our Halaqahs are designed to be the perfect balance of spiritual growth and high-energy fun. Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It’s about learning the Deen while building brotherhood in a space where you truly belong.
               </div>
             </div>
           <div className="flex justify-center mb-4 relative z-15">
@@ -83,11 +83,11 @@ export default function Activities(){
               Retreat
             </div>
             <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
+            The YM Retreat is designed to help youth strengthen their connection with Allah, build friendships, and develop leadership skills. Through outdoor activities, group discussions, and shared experiences, participants leave connected to a community of brothers.
             </div>
           </div>
           <div className="relative h-128 [mask-image:linear-gradient(to_bottom,transparent,black_20%)]">
-          <Image className="object-bottom object-cover scale-100" src="/images/YMRetreat2.jpeg" fill alt="Retreat"></Image>
+          <Image className="object-[center_80%] object-cover scale-100" src="/images/YMRetreat2.jpeg" fill alt="Retreat"></Image>
         </div>
         </motion.div>
 
@@ -104,11 +104,11 @@ export default function Activities(){
               Sports
             </div>
             <div className="text-white ml-16 text-lg md:text-xl lg:text-2xl font-medium mt-2 mr-16">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dignissim ipsum. Donec eu nisi urna. Morbi condimentum justo sed suscipit consectetur. Fusce hendrerit semper erat, non molestie tortor pulvinar nec.                
+            YM Sports create an environment where youth can stay active, have fun, and build genuine brotherhood. From weekly games to special tournaments, sports serve as a gateway to friendship, mentorship, and personal growth within an Islamic atmosphere.
             </div>
           </div>
           <div className="relative h-128 [mask-image:linear-gradient(to_bottom,transparent,black_20%)]">
-          <Image className="object-cover object-left" src="/images/BasketballCropped.jpg" fill alt="Sports"></Image>
+          <Image className="object-cover object-[center_30%]" src="/images/BasketballCropped.jpg" fill alt="Sports"></Image>
           </div>
         </motion.div>
               
