@@ -18,7 +18,7 @@ export default function Navbar(){
                 />
                 </Link>
                 </div>
-            <ul className="flex gap-6">
+            <ul className="flex gap-6 flex-wrap">
                 <Link href="/">
                 <li>Home</li>
                 </Link>
