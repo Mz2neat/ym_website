@@ -1,6 +1,6 @@
 "use client";
 
-// Activies/contact/page.tsx
+//contact/page.tsx
 
 export default function contact(){
   return (

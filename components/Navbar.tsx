@@ -6,19 +6,23 @@ import { useState } from 'react';
 import Image from "next/image";
 
 export default function Navbar(){
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return(
-        <nav className="flex items-center justify-between p-4 bg-black text-xs md:text-lg lg:text-xl text-white">
-            <div className="flex-1">
+        <nav className="flex items-center justify-between p-4 bg-black text-xs md:text-sm lg:text-lg xl:text-xl text-white">
+
+            <div className="">
                 <Link href="/">
                 <Image
-                src="/images/YMLogoTransparentCrop.png"
+                src="/images/YMLogo.png"
                 alt="YM Logo"
-                width={110}
+                width={60}
                 height={50}
+                className="lg:w-29 lg:h-20"
                 />
                 </Link>
                 </div>
-            <ul className="flex gap-6 flex-wrap">
+            <ul className="hidden lg:flex gap-6 flex-wrap">
                 <Link className="hover:text-[#2683EB]" href="/">
                 <li>Home</li>
                 </Link>
@@ -45,7 +49,7 @@ export default function Navbar(){
                     </div>
                 </div>
 
-                <Link className="hover:text-[#2683EB]" href="/leaninganddevelopment">
+                <Link className="hover:text-[#2683EB]" href="/learningAndDevelopment">
                 <li>Learning and Development</li>
                 </Link>
 
@@ -71,13 +75,69 @@ export default function Navbar(){
                 </Link>
 
             </ul>
+
+        <div className="flex justify-end gap-4 md:gap-8">
+             {/*Mobile Menu*/}
+            <div className="flex justify-end lg:hidden relative z-50">
+                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white">
+                    Menu
+                </button>
+            </div>
+            
             <div className="flex-1 flex justify-end">
                 <Link href="join">
-                <button className="bg-blue-800 text-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
+                <button className="bg-blue-800 text-xs lg:text-lg md:text-sm text-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
                     Join Now
                 </button>
                 </Link>
             </div>
+        </div>
+
+        {isMobileMenuOpen && (
+
+        <div className="relative absolute top-full left-0 w-full bg-[#0B0F14] flex flex-col p-6 lg:hidden">
+            
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            Home
+            </Link>
+            
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+            About
+            </Link>
+
+            <Link href="/activities" onClick={() => setIsMobileMenuOpen(false)}>
+            Activities
+            </Link>
+
+            <Link href="/ourReach" onClick={() => setIsMobileMenuOpen(false)}>
+            Our Reach
+            </Link>
+
+            <Link href="/halaqahs" onClick={() => setIsMobileMenuOpen(false)}>
+            Halaqahs
+            </Link>
+
+            <Link href="/learningAndDevelopment" onClick={() => setIsMobileMenuOpen(false)}>
+            Learning and Development
+            </Link>
+
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            Contact Us
+            </Link>
+
+            <Link href="/findYourNeighbourNet" onClick={() => setIsMobileMenuOpen(false)}>
+            Find your NeighbourNet
+            </Link>
+
+            <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
+            Donate
+            </Link>
+            
+
+        </div>
+        )}
+
+            
         </nav>
     );
 }
