@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 export default function about() {
   return (
     <div className="min-h-screen font-sans"> {/*  can use bg-[#05070B] for actual color */}
@@ -11,12 +14,18 @@ export default function about() {
         extendt he length ofg th page  */} </h1>
         <section className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl tracking-tight font-bold mt-30 text-center">
-            include something like whast is the mission and vision of YM here. or What is YM about.
+            include something like what is the mission and vision of YM here. or What is YM about.
           </h1>
           </section>
-          <div className="mx-auto mt-16 flex max-w-[99%] flex-col gap-8 md:flex-row text-center"> {/*This code segment (lines 17-41) covers the text for the mission and vission statements The width is precentage to avoid scaling issues on other devices */}
-            <div className="md:w-1/2"> {/* makes text boxes 1/2 width of set width from above (99% of screen width)*/}
-              <h2 className="text-2xl font-bold text-white"> {/* for missionsatament heading*/}
+          <div className="mx-auto mt-16 flex max-w-[85%] flex-col gap-8 md:flex-row text-center"> {/*This code segment (lines 17-41) covers the text for the mission and vission statements The width is precentage to avoid scaling issues on other devices */}
+            <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-white/20 rounded-xl bg-white/5 p-6"> {/* makes text boxes 1/2 width of set width from above (99% of screen width)*/}
+            <Image
+              src="/images/3.png"
+              alt="compass"
+              fill
+              className="object-contain opacity-5 brightness-0 invert"
+            />
+              <h2 className="relative z-10 text-2xl font-bold text-white"> {/* for missionsatament heading*/}
                  Mission Statement 
               </h2>
                 <p className="mt-4 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto"> {/* for mission statement text. max width is 70% of the 99% from above to avoid scaling issues on other devices and to avoid have the text going all the way to the edges*/}  
@@ -26,11 +35,17 @@ export default function about() {
 
                 </p>
            </div> 
-            <div className="md:w-1/2">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-white/20 rounded-xl bg-white/5 p-6">
+            <Image
+              src="/images/2.png"
+              alt="compass"
+              fill
+              className="object-contain opacity-5 brightness-0 invert"
+            />
+              <h2 className="relative z-10 text-2xl font-bold text-white">
                   Vision Statement
               </h2>
-                <p className="mt-4 mb-30 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto">
+                <p className="mt-4 mb-2 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto">
 
          Canadian Muslim youth collectively contributing to the betterment of society with God-consciousness and a firm understanding of their Muslim identity. 
 
