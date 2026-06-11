@@ -1,6 +1,6 @@
 "use client";
 
-// Activies/halaqahs/page.tsx
+// halaqahs/page.tsx
 
 export default function halaqahs(){
   return (

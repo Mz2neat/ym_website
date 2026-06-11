@@ -1,6 +1,6 @@
 "use client";
 
-// Activies/ourReach/page.tsx
+// ourReach/page.tsx
 
 export default function ourReach(){
   return (
