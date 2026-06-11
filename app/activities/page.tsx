@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, Star, Users } from "lucide-react";
+import Link from "next/link";
+
 
 
 export default function Activities(){
@@ -56,9 +58,11 @@ export default function Activities(){
               </div>
             </div>
           <div className="flex justify-center mb-4 relative z-15">
+            <Link href="/halaqahs">
             <button className="border-2 border-[#2683EB] bg-[#0B0F14] text-white rounded-2xl text-xl md:text-2xl lg:text-3xl mt-10 font-medium px-10 py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
-              Find a Halaqah
+              Learn More
             </button>
+            </Link>
           </div>
         </div>
 
