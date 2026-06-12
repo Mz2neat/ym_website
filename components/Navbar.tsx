@@ -14,11 +14,11 @@ export default function Navbar(){
             <div className="">
                 <Link href="/">
                 <Image
-                src="/images/YMLogo.png"
+                src="/images/YMLogoNavBar.png"
                 alt="YM Logo"
                 width={60}
                 height={50}
-                className="lg:w-29 lg:h-20"
+                className="sm:w-29 sm:h-20"
                 />
                 </Link>
                 </div>
@@ -86,7 +86,7 @@ export default function Navbar(){
             
             <div className="flex-1 flex justify-end">
                 <Link href="join">
-                <button className="bg-blue-800 text-xs lg:text-lg md:text-sm text-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
+                <button className="bg-[#002bb3] text-xs lg:text-lg md:text-sm text-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
                     Join Now
                 </button>
                 </Link>

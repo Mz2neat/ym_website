@@ -35,14 +35,14 @@ export default function Activities(){
 
         {/*Gradient Image in Background*/}
               <div className="absolute top-0 right-0 w-[1300px] h-screen overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#0B0F14_70%)] z-10">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#000010_70%)] z-10">
               </div>
               <Image className="object-cover object-left scale-100" src="/images/YMRetreat.jpeg" fill alt="Background Image"/>
               </div>
 {/*Halaqah Section*/}
 
 <motion.div 
-        className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[75%] max-w-8xl rounded-2xl mb-16 flex"
+        className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-32 mx-auto relative z-20 h-auto w-[75%] max-w-8xl rounded-2xl mb-16 flex"
         initial={{opacity: 0, y:50}} 
         whileInView={{opacity: 1, y:0}} 
         transition={{duration:0.8}} 
@@ -59,7 +59,7 @@ export default function Activities(){
             </div>
           <div className="flex justify-center mb-4 relative z-15">
             <Link href="/halaqahs">
-            <button className="border-2 border-[#2683EB] bg-[#0B0F14] text-white rounded-2xl text-xl md:text-2xl lg:text-3xl mt-10 font-medium px-10 py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
+            <button className="border-2 border-[#2683EB] bg-[#000010] text-white rounded-2xl text-xl md:text-2xl lg:text-3xl mt-10 font-medium px-10 py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
               Learn More
             </button>
             </Link>
@@ -76,7 +76,7 @@ export default function Activities(){
         
         {/* Retreat Section */}
         <motion.div 
-          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
+          className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
@@ -97,7 +97,7 @@ export default function Activities(){
 
         {/* Sports Section */}
         <motion.div 
-          className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
+          className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-135 rounded-2xl flex flex-col"
           initial={{opacity: 0, y:50}} 
           whileInView={{opacity: 1, y:0}} 
           transition={{duration:0.8}} 
