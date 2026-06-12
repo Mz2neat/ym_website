@@ -3,8 +3,8 @@
 import Image from "next/image";
 export default function about() {
   return (
-    <div className=" min-h-screen font-sans"> {/*  can use bg-[#05070B] for actual color */}
-      <section className="relative h-screen overflow-hidden">
+    <div className=" relative h-auto"> {/*  can use bg-[#05070B] for actual color */}
+      <section className="absolute relative h-screen overflow-hidden">
         <Image
           src="/images/lexuslf4.jpg"
           alt="BackgroundImage"
