@@ -18,7 +18,7 @@ export default function Home(){
       </div>
       {/*Gradient Image in Background*/}
       <div className="absolute top-0 right-0 w-full h-[50vh] md:w-[70vw] lg:h-[100vh] lg:w-[70vw] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#0B0F14_90%)] z-10">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#000010_90%)] z-10">
       </div>
       <Image className="object-contain scale-150" src="/images/YMLogoBlurred.webp" fill alt="YM Logo"/>
       </div>
@@ -27,7 +27,7 @@ export default function Home(){
 
 <div className="">
       <Link href="/join" className="relative z-15">
-      <button className="rounded-lg bg-blue-800 mt-10 ml-4 lg:ml-32 font-medium px-5 py-5 lg:px-10 lg:py-6 text-lg lg:text-3xl hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
+      <button className="rounded-lg bg-[#002bb3] mt-10 ml-4 lg:ml-32 font-medium px-5 py-5 lg:px-10 lg:py-6 text-lg lg:text-3xl hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
       Join our Community
       <Users className="w-5 h-5 lg:w-10 lg:h-10 inline-flex ml-4"/>
       </button>
