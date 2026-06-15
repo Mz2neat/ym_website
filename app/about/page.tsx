@@ -3,8 +3,8 @@
 import Image from "next/image";
 export default function about() {
   return (
-    <div className=" relative h-auto"> {/*  can use bg-[#05070B] for actual color */}
-      <section className="absolute relative h-screen overflow-hidden">
+    <main className="min-h-screen bg-[#000010]">
+      <section className="relative min-h-screen">
         <Image
           src="/images/lexuslf4.jpg"
           alt="BackgroundImage"
@@ -13,18 +13,21 @@ export default function about() {
         />
 
       <div className="absolute inset-0 bg-black/50" />
-      <main className="relative z-10">
+      
+      <div className="relative z-10">
+
       <h1 className="ml-16 pt-10 font-bold text-xl">
         What is Young Muslims
       </h1>
       <h1 className="text-4xl text-center tracking-tight font-extrabold mt-8 mb-1 max-w-2xl mx-auto">
-      YM is not just another youth group </h1>
+      YM is not just another youth group 
+      </h1>
       <h1 className="text-4xl text-center tracking-tight font-extrabold mt-20 max-w-[85%] mx-auto">
        YM is A community where meaningful experiences, friendships, and faith naturally connect.
          {/* We should have boild statemnt here that 
         extendt he length ofg th page  */} 
         </h1>
-      </main>
+      </div>
       
       
       <section className= "px-8 py-20"> 
@@ -50,6 +53,7 @@ export default function about() {
 
                 </p>
            </div> 
+
             <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-white/20 rounded-xl bg-white/5 p-6">
             <Image
               src="/images/2.png"
@@ -70,14 +74,14 @@ export default function about() {
           </div> 
            </section>
            </section>
-           <main>
+           
 
 {/*<section className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl tracking-tight font-bold mt-30 text-center">
             What We Do
           </h1>
           </section>*/} {/*this is the what we do text/headding*/}
-        
+        <section className="relative z-10 px-8 pt-16 pb-24">
           <div className="mx-auto mt-8 flex max-w-[95%] flex-col gap-8 md:flex-row text-center"> {/* box for what is ym a halaqah and image of logo or halaqah */}
                {/* LEFT SIDE: stacked text boxes */}
             <div className="flex flex-col gap-8 md:w-1/3">
@@ -89,10 +93,10 @@ export default function about() {
                 <p className="mt-8 text-md leading-8 text-gray-300"> {/* */}
          YM Halaqas are a space to chill, play, connect, and grow. Whether you come for the game, the people, or just to see what it’s about, you’ll find a community where Islam feels real, relevant, and connected to everyday life. Through activities, conversations, and brotherhood, YM helps you build friendships, strengthen your faith, and find a place where you truly belong. 
 
-                </p>
+              </p>
               </div> 
-         <div>
-            <h2 className=" mt-16 mx-auto text-lg font-bold text-white text-center"> {/* */}
+              <div>
+              <h2 className=" mt-16 mx-auto text-lg font-bold text-white text-center"> {/* */}
                 What does a YM Halaqah Include?
               </h2>
                 <p className="mt-8 text-md leading-8 text-gray-300 mx-auto text-center"> {/* */}
@@ -100,15 +104,18 @@ export default function about() {
                 </p>
            </div>
            </div>
-           <div className="relative w-full aspect-[16/9] md:w-2/3">
+           <div className=" w-full md:w-2/3">
             <Image
               src="/images/TheMangoMan.jpeg"
               alt="YMactivity"
-              fill
-              className="object-contain rounded-lg"
+              width={800}
+              height={500}
+              className="w-full h-auto object-cover rounded-lg"
             /> 
             </div>
           </div>
+
+
             <div>
             <h2 className=" mt-10 mx-auto text-2xl font-bold text-white max-w-[60%] text-center leading-10"> {/* */}
                 The 3 majour aspects of a YM Halaqah?
@@ -168,8 +175,9 @@ export default function about() {
             </div>
             
           </div>
+          </section>
     
     </main>
-</div>
+
   );
 }
