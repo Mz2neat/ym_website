@@ -14,7 +14,7 @@ export default function halaqahs(){
           <h1 className="mx-4 lg:mx-0 lg:ml-32 text-base md:text-xl lg:text-2xl font-medium mt-4 max-w-4xl">Each Session is an interactive space, designed for real conversations, moving from lectures to shared experiences.</h1>
         </div>
 
-        <div className="absolute top-0 right-0 w-full lg:w-[1300px] h-[50vh] lg:h-screen overflow-hidden">
+        <div className="absolute top-0 right-0 w-full lg:w-[55vw] h-[50vh] lg:h-screen overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#000010] via-[#000010]/70 to-transparent z-10">
         </div>
         <Image className="object-cover object-left scale-100" src="/images/Halaqah3.jpeg" fill alt="Background Image"/>

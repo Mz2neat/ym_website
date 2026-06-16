@@ -50,22 +50,30 @@ export default function about() {
     </motion.span>
   ))}
 </h1>
-          <motion.div onViewportEnter={lockScrollUntilRevealed} viewport={{ once: true, amount: 0.3 }}>
-            <h1 className="px-4 text-[clamp(1rem,3.2vw,2.25rem)] text-center text-white font-semibold mt-10 lg:mt-170 max-w-[95%] lg:max-w-[85%] mx-auto">
-              {"YM is A community where meaningful experiences, friendships, and faith naturally connect".split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block mr-[0.25em]"
-                  initial={{ opacity: 0, filter: "blur(6px)" }}
-                  whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.08, duration: 1, ease: "easeOut" }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </h1>
-          </motion.div>
+          <motion.h1
+            onViewportEnter={lockScrollUntilRevealed}
+            className="px-4 text-[clamp(1rem,3.2vw,2.25rem)] text-center text-white font-semibold mt-10 lg:mt-120 mb-16 lg:mb-48 max-w-[95%] lg:max-w-[85%] mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.05 } },
+            }}
+          >
+            {"YM is a community where meaningful experiences, friendships, and faith naturally connect".split(" ").map((word, index) => (
+              <motion.span
+                key={index}
+                className="inline-block mr-[0.25em]"
+                variants={{
+                  hidden: { opacity: 0, filter: "blur(6px)" },
+                  visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 1, ease: "easeOut" } },
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.h1>
         </div>
 
         <section className="relative z-20 px-4 lg:px-8 py-10 lg:py-20">
