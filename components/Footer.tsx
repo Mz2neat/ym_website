@@ -4,10 +4,11 @@
 
 import Link from "next/link";
 
-export default function Footer(){
-    return(
-        <footer className="flex items-center justify-between p-4 bg-black text-white h-64">
-            <ul className="ml-16">
+export default function Footer() {
+    return (
+        <footer className="w-full flex flex-col md:flex-row justify-between px-16 py-12">
+            {/* COLUMN 1 - LOGO AND SOCIAL MEDIA */}
+            <div className="flex flex-col gap-2">
                 <Link href="/">
                 <li>Home</li>
                 </Link>
