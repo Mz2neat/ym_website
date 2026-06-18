@@ -118,7 +118,7 @@ export default function about() {
               src="/images/TheMangoMan.jpeg"
               alt="YMactivity"
               fill
-              className="object-contain rounded-lg brightness-65"
+              className="object-contain rounded-lg brightness-75"
             />
           </div>
         </div>

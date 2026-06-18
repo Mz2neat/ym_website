@@ -16,9 +16,8 @@ export default function Navbar(){
                 <Image
                 src="/images/YMLogoNavBar.png"
                 alt="YM Logo"
-                width={60}
-                height={50}
-                className="sm:w-29 sm:h-20"
+                width={100}
+                height={75}
                 />
                 </Link>
                 </div>
