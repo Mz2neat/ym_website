@@ -17,7 +17,7 @@ export default function about() {
           h-screen → min-h-screen so content is never clipped on smaller screens. */}
       <section className="relative min-h-screen">
         <Image
-          src="/images/lexuslf4.jpg"
+          src="/images/lexuslfa1.jpg"
           alt="BackgroundImage"
           fill
           className="object-cover object-center opacity-20"
@@ -47,9 +47,9 @@ export default function about() {
     What is the mission and vision of YM?
   </h1>
 
-  <div className="mx-auto mt-8 flex max-w-[85%] flex-col gap-8 md:flex-row text-center">
+  <div className="mx-auto mt-90 flex max-w-[85%] flex-col gap-8 md:flex-row text-center">
     {/* Mission card */}
-    <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-[#2683EB]/30 bg-black p-6">
+    <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-[#2683EB]/30 bg-black p-20">
       <Image
         src="/images/3.png"
         alt="compass"
@@ -66,7 +66,7 @@ export default function about() {
     </div>
 
     {/* Vision card */}
-    <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-[#2683EB]/30 bg-black p-6">
+    <div className="md:w-1/2 relative overflow-hidden rounded-xl border border-[#2683EB]/30 bg-black p-20">
       <Image
         src="/images/2.png"
         alt="compass"
@@ -161,15 +161,8 @@ export default function about() {
   </div>
 </div>
 
-        <div className="mx-auto mt-16 flex max-w-[95%] flex-col gap-8 md:flex-row text-center">
-          <div className="md:w-1/3">
-            <h2 className="text-2xl font-bold text-white">Real Moments Real Impact</h2>
-            <p className="mt-4 text-lg leading-8 text-gray-300 max-w-[70%] mx-auto">
-              something about halaqah ie sports etc being a space for real moments and real impact.
-            </p>
-          </div>
-        </div>
-<div className="mx-auto mt-16 max-w-[95%]">
+        
+<div className="mx-auto mt-16 max-w-[90%]">
         <Activities/>
       </div>
 

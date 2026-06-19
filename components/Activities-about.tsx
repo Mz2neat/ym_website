@@ -73,8 +73,11 @@ export default function Activities() {
             From halaqahs and sports nights to retreats and community service,
             each space creates experiences that build faith, friendships, and leaders.
           </p>
-          <button className="mt-6 rounded-lg border border-[#2683EB] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#2683EB]">
-            View All Activities
+          <button
+            className="mt-6 rounded-lg border border-[#2683EB] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#2683EB]"
+            onClick={() => (window.location.href = "/activities")}
+          >
+            Explore YM Activities
           </button>
         </div>
 
