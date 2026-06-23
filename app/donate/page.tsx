@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function donate(){
-    const [amount, setAmount] = useState("$50.00");
+    const [amount, setAmount] = useState("50.00");
     const [activePreset, setActivePreset] = useState("$50");
 
     const handlePreset = (preset: string, value: string) => {
@@ -13,13 +13,28 @@ export default function donate(){
         if (preset !== "Other") {
             setAmount(value);
         } else {
-            setAmount("$");
+            setAmount("");
         }
     };
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setAmount(e.target.value);
         setActivePreset("Other");
+    };
+    const handlePaymentPopup = () => {
+        const popupWidth = 600;
+        const popupHeight = 800;
+
+        const left = (window.innerWidth/2) - (popupWidth/2)
+        const top = (window.innerHeight/2) - (popupHeight/2)
+
+        const cleanAmount = amount.replace(/[^0-9.]/g, '');
+
+        window.open(
+            `https://www.zeffy.com/en-CA/donation-form/YOUR-FORM-ID?amount=${cleanAmount}`,
+            "ZeffyPayment",
+            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=yes,status=no,location=no,toolbar=no`
+        )
     };
 
     return(
@@ -41,7 +56,7 @@ export default function donate(){
                 </motion.div>
 
                 <motion.div 
-                    className="w-[50%] relative h-[600px] transform-gpu will-change-transform bg-[#1C1C28] rounded-3xl p-10 flex flex-col"
+                    className="w-[50%] relative h-auto transform-gpu will-change-transform bg-[#1C1C28] rounded-3xl p-10 flex flex-col"
                     initial={{opacity: 0, x:50}} 
                     whileInView={{opacity: 1, x:0}} 
                     transition={{duration:0.8}} 
@@ -58,32 +73,31 @@ export default function donate(){
 
                     <div className="flex w-full border border-gray-500 rounded-lg overflow-hidden mb-8">
                         <button 
-                            onClick={() => handlePreset("$25", "$25.00")}
+                            onClick={() => handlePreset("25", "25.00")}
                             className={`flex-1 py-3 font-medium transition-colors border-r border-gray-500 ${activePreset === "$25" ? "bg-gray-600 text-white" : "text-gray-400 hover:bg-gray-700/50"}`}
-                        >$25</button>
+                        >25</button>
                         <button 
-                            onClick={() => handlePreset("$50", "$50.00")}
+                            onClick={() => handlePreset("50", "50.00")}
                             className={`flex-1 py-3 font-medium transition-colors border-r border-gray-500 ${activePreset === "$50" ? "bg-gray-600 text-white" : "text-gray-400 hover:bg-gray-700/50"}`}
-                        >$50</button>
+                        >50</button>
                         <button 
-                            onClick={() => handlePreset("$75", "$75.00")}
+                            onClick={() => handlePreset("75", "75.00")}
                             className={`flex-1 py-3 font-medium transition-colors border-r border-gray-500 ${activePreset === "$75" ? "bg-gray-600 text-white" : "text-gray-400 hover:bg-gray-700/50"}`}
-                        >$75</button>
+                        >75</button>
                         <button 
-                            onClick={() => handlePreset("$100", "$100.00")}
+                            onClick={() => handlePreset("100", "100.00")}
                             className={`flex-1 py-3 font-medium transition-colors border-r border-gray-500 ${activePreset === "$100" ? "bg-gray-600 text-white" : "text-gray-400 hover:bg-gray-700/50"}`}
-                        >$100</button>
+                        >100</button>
                         <button 
-                            onClick={() => handlePreset("Other", "$")}
+                            onClick={() => handlePreset("Other", "")}
                             className={`flex-1 py-3 font-medium transition-colors ${activePreset === "Other" ? "bg-gray-600 text-white" : "text-gray-400 hover:bg-gray-700/50"}`}
                         >Other</button>
                     </div>
 
-                    <h3 className="text-white text-xl font-semibold mb-6">Payment Method</h3>
+                    <h3 className="text-white text-xl font-semibold mb-6">Accepted Donation Methods</h3>
 
                     <div className="flex flex-col gap-4">
                         <label className="flex items-center gap-4 cursor-pointer">
-                            <input type="radio" name="payment" defaultChecked className="w-5 h-5 accent-[#2683EB]" />
                             <div className="relative w-11 bg-white h-7 rounded flex items-center justify-center p-1">
                                 <Image src="/images/visaLogo.png" fill alt="Visa" className="object-contain p-1" />
                             </div>
@@ -91,7 +105,6 @@ export default function donate(){
                         </label>
                         
                         <label className="flex items-center gap-4 cursor-pointer">
-                            <input type="radio" name="payment" className="w-5 h-5 accent-[#2683EB]" />
                             <div className="relative w-10 h-6 flex items-center justify-center">
                                 <Image src="/images/mastercardLogo.png" fill alt="Mastercard" className="object-contain" />
                             </div>
@@ -99,7 +112,6 @@ export default function donate(){
                         </label>
 
                         <label className="flex items-center gap-4 cursor-pointer">
-                            <input type="radio" name="payment" className="w-5 h-5 accent-[#2683EB]" />
                             <div className="relative w-10 h-6 flex items-center justify-center">
                                 <Image src="/images/paypal.png" fill alt="Paypal" className="object-contain" />
                             </div>
@@ -107,7 +119,6 @@ export default function donate(){
                         </label>
 
                         <label className="flex items-center gap-4 cursor-pointer">
-                            <input type="radio" name="payment" className="w-5 h-5 accent-[#2683EB]" />
                             <div className="relative w-11 h-7 bg-white rounded flex items-center justify-center">
                                 <Image src="/images/applePayLogo.png" fill alt="Apple Pay" className="object-contain" />
                             </div>
@@ -115,13 +126,17 @@ export default function donate(){
                         </label>
 
                         <label className="flex items-center gap-4 cursor-pointer">
-                            <input type="radio" name="payment" className="w-5 h-5 accent-[#2683EB]" />
                             <div className="relative w-10 h-6 flex items-center justify-center">
                                 <Image src="/images/googlePayLogo.png" fill alt="Google Pay" className="object-contain" />
                             </div>
                             <span className="text-white font-bold">Google Pay</span>
                         </label>
                     </div>
+
+                        <button onClick={handlePaymentPopup}
+                        className="w-full mt-10 bg-[#2683EB] text-white rounded-lg py-4 font-bold text-xl hover:bg-[#000010] border-2 border-transparent hover:border-[#2683EB] transition-all duration-300 shadow-[0_0_20px_rgba(38,131,235,0.4)] hover:shadow-none">
+                            Continue to Secure Payment.
+                        </button>
                 </motion.div>
 
             </div>
