@@ -49,13 +49,49 @@ export default function LearningAndDevelopment(){
             <div className="mb-4">
                 <motion.div 
                     className={`bg-[#2683EB] text-white p-4 flex justify-between items-center text-xl font-medium cursor-pointer ${openModule === 'reverts' ? 'rounded-t-lg' : 'rounded-lg'}`}
+                    onClick={() => toggleModule('Br.Muqsith')}
+                    initial={{opacity: 0, y:20}} 
+                    whileInView={{opacity: 1, y:0}} 
+                    transition={{duration:0.4}} 
+                    viewport={{once:true}}
+                >
+                    <span>Broader Modules </span>
+                    <span>{openModule === 'Br.Muqsith' ? '▼' : '▶'}</span>
+                </motion.div>
+                
+                {openModule === 'Br.Muqsith' && (
+                    <motion.div 
+                        className="bg-white text-black p-8 rounded-b-lg"
+                        initial={{opacity: 0}} 
+                        animate={{opacity: 1}} 
+                        transition={{duration:0.3}} 
+                    >
+                       <h1 className="text-3xl font-semibold mb-4">These are broader modules made by brother Muqsit </h1>
+<p className="text-lg">
+  This module is currently under development. but you can view it here!{' '}
+  <a
+    href="https://icna-study-circles.vercel.app/index.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#2683EB] underline"
+    >
+    View this module
+  </a>
+</p>
+</motion.div>
+                )}
+            </div>
+            
+            <div className="mb-4">
+                <motion.div 
+                    className={`bg-[#2683EB] text-white p-4 flex justify-between items-center text-xl font-medium cursor-pointer ${openModule === 'reverts' ? 'rounded-t-lg' : 'rounded-lg'}`}
                     onClick={() => toggleModule('reverts')}
                     initial={{opacity: 0, y:20}} 
                     whileInView={{opacity: 1, y:0}} 
                     transition={{duration:0.4}} 
                     viewport={{once:true}}
                 >
-                    <span>Modules for Reverts</span>
+                    <span>Learning Associates Modules </span>
                     <span>{openModule === 'reverts' ? '▼' : '▶'}</span>
                 </motion.div>
                 
