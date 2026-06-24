@@ -106,7 +106,7 @@ export default function donate(){
                         
                         <label className="flex items-center gap-4 cursor-pointer">
                             <div className="relative w-10 h-6 flex items-center justify-center">
-                                <Image src="/images/mastercardLogo.png" fill alt="Mastercard" className="object-contain" />
+                                <Image src="/images/MastercardLogo.png" fill alt="Mastercard" className="object-contain" />
                             </div>
                             <span className="text-white font-bold">Mastercard</span>
                         </label>
@@ -120,14 +120,14 @@ export default function donate(){
 
                         <label className="flex items-center gap-4 cursor-pointer">
                             <div className="relative w-11 h-7 bg-white rounded flex items-center justify-center">
-                                <Image src="/images/applePayLogo.png" fill alt="Apple Pay" className="object-contain" />
+                                <Image src="/images/ApplePayLogo.png" fill alt="Apple Pay" className="object-contain" />
                             </div>
                             <span className="text-white font-bold">Apple Pay</span>
                         </label>
 
                         <label className="flex items-center gap-4 cursor-pointer">
                             <div className="relative w-10 h-6 flex items-center justify-center">
-                                <Image src="/images/googlePayLogo.png" fill alt="Google Pay" className="object-contain" />
+                                <Image src="/images/GooglePayLogo.png" fill alt="Google Pay" className="object-contain" />
                             </div>
                             <span className="text-white font-bold">Google Pay</span>
                         </label>
