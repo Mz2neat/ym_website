@@ -16,7 +16,7 @@ export default function contact(){
 
         const formData = new FormData(event.currentTarget);
 
-        formData.append("access_key", "d677e768-189e-47d2-801c-36196d4dd6c6");
+        formData.append("access_key", "335944dc-5376-4a7f-a344-e49bdbc5b9ec");
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method:"POST",
@@ -139,27 +139,12 @@ export default function contact(){
                 <h1 className="text-white text-xl font-bold mb-6 uppercase">General Young Muslims<br/>Contact Information</h1>
                 
                 <div className="grid grid-cols-2 gap-4 w-full">
-                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-start bg-[#000010]/40 backdrop-blur-sm">
-                        <MapPin className="text-[#2683EB] w-5 h-5 shrink-0 mt-1" />
-                        <div className="flex flex-col">
-                            <span className="text-white font-bold text-sm mb-1">Office Address</span>
-                            <span className="text-white text-xs leading-tight">391 Burnhamthorpe<br/>Rd E, Oakville, ON<br/>L6H 7B4</span>
-                        </div>
-                    </div>
-
-                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-start bg-[#000010]/40 backdrop-blur-sm">
-                        <Phone className="text-[#2683EB] w-5 h-5 shrink-0 mt-1" />
-                        <div className="flex flex-col">
-                            <span className="text-white font-bold text-sm mb-1">Main Office Phone</span>
-                            <span className="text-white text-xs">+1 (905)-257-4262</span>
-                        </div>
-                    </div>
 
                     <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-start bg-[#000010]/40 backdrop-blur-sm">
                         <Mail className="text-[#2683EB] w-5 h-5 shrink-0 mt-1" />
                         <div className="flex flex-col">
                             <span className="text-white font-bold text-sm mb-1">Main Email</span>
-                            <span className="text-white text-xs">YMNational@Icna.ca</span>
+                            <span className="text-white text-xs">ym.national@Icna.ca</span>
                         </div>
                     </div>
 
