@@ -31,7 +31,7 @@ export default function donate(){
         const cleanAmount = amount.replace(/[^0-9.]/g, '');
 
         window.open(
-            `https://www.zeffy.com/en-CA/donation-form/YOUR-FORM-ID?amount=${cleanAmount}`,
+            `https://www.zeffy.com/en-CA/donation-form/support-our-mission-194?amount=${cleanAmount}`,
             "ZeffyPayment",
             `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=yes,status=no,location=no,toolbar=no`
         )
