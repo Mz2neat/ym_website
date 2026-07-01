@@ -1,7 +1,7 @@
 
 // ourReach/page.tsx
 
-import {supabase} from "@/lib/supabase";
+import {supabase} from "@/lib/supabase/public";
 import ChapterCard from "@/components/ChapterCard";
 import InteractiveMap from "@/components/InteractiveMap";
 
