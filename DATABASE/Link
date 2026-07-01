@@ -1,0 +1,3 @@
+const pool = new Pool({
+  connectionString: "postgres://postgres:Arahman55@localhost:5432/YM Database",
+});
