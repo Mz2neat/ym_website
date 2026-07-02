@@ -5,6 +5,8 @@ import {supabase} from "@/lib/supabase/public";
 import ChapterCard from "@/components/ChapterCard";
 import InteractiveMap from "@/components/InteractiveMap";
 
+export const dynamic = "force-dynamic";
+
 export default async function ourReach(){
 
   const { data: chapters, error } = await supabase
