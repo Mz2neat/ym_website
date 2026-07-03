@@ -9,18 +9,19 @@ export default function Navbar(){
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return(
-        <nav className="flex items-center justify-between p-4 bg-black text-xs md:text-sm lg:text-lg xl:text-xl text-white">
+        <nav className="relative flex items-center justify-between p-4 bg-black text-sm md:text-base lg:text-lg xl:text-xl text-white">
 
-            <div className="">
+            <div className="shrink-0">
                 <Link href="/">
                 <Image
                 src="/images/YMLogoNavBar.png"
                 alt="YM Logo"
                 width={100}
                 height={75}
+                className="w-16 md:w-20 lg:w-[100px] h-auto"
                 />
                 </Link>
-                </div>
+            </div>
             <ul className="hidden lg:flex gap-6 flex-wrap">
                 <Link className="hover:text-[#2683EB]" href="/">
                 <li>Home</li>
@@ -75,17 +76,16 @@ export default function Navbar(){
 
             </ul>
 
-        <div className="flex justify-end gap-4 md:gap-8">
-             {/*Mobile Menu*/}
+        <div className="flex items-center justify-end gap-4 md:gap-8">
             <div className="flex justify-end lg:hidden relative z-50">
-                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white">
+                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white font-medium text-sm md:text-base">
                     Menu
                 </button>
             </div>
             
             <div className="flex-1 flex justify-end">
                 <Link href="join">
-                <button className="bg-[#002bb3] text-xs lg:text-lg md:text-sm text-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
+                <button className="bg-[#002bb3] text-xs md:text-sm lg:text-lg text-white px-4 md:px-5 py-2 lg:py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
                     Join Now
                 </button>
                 </Link>
@@ -94,45 +94,44 @@ export default function Navbar(){
 
         {isMobileMenuOpen && (
 
-        <div className="relative absolute top-full left-0 w-full bg-[#0B0F14] flex flex-col p-6 lg:hidden">
+        <div className="absolute top-full left-0 w-full bg-[#0B0F14] border-t border-[#2683EB]/30 flex flex-col p-6 gap-3 z-50 shadow-xl lg:hidden">
             
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-gray-800 hover:text-[#2683EB]">
             Home
             </Link>
             
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-gray-800 hover:text-[#2683EB]">
             About
             </Link>
 
-            <Link href="/activities" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/activities" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-gray-800 hover:text-[#2683EB]">
             Activities
             </Link>
 
-            <Link href="/ourReach" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/ourReach" onClick={() => setIsMobileMenuOpen(false)} className="py-2 pl-4 text-base font-medium border-b border-gray-800 text-gray-300 hover:text-[#2683EB]">
             Our Reach
             </Link>
 
-            <Link href="/halaqahs" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/halaqahs" onClick={() => setIsMobileMenuOpen(false)} className="py-2 pl-4 text-base font-medium border-b border-gray-800 text-gray-300 hover:text-[#2683EB]">
             Halaqahs
             </Link>
 
-            <Link href="/learningAndDevelopment" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/learningAndDevelopment" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-gray-800 hover:text-[#2683EB]">
             Learning and Development
             </Link>
 
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-gray-800 hover:text-[#2683EB]">
             Contact Us
             </Link>
 
-            <Link href="/findYourNeighbourNet" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/findYourNeighbourNet" onClick={() => setIsMobileMenuOpen(false)} className="py-2 pl-4 text-base font-medium border-b border-gray-800 text-gray-300 hover:text-[#2683EB]">
             Find your NeighbourNet
             </Link>
 
-            <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)} className="py-2 text-base font-medium border-b border-transparent hover:text-[#2683EB]">
             Donate
             </Link>
             
-
         </div>
         )}
 

@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 export default function AnimatedMap() {
   return (
     <motion.div 
-        className="overflow-hidden bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col h-[60vh] w-full"
+        className="overflow-hidden bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col h-[40vh] md:h-[50vh] lg:h-[60vh] w-full"
         initial={{opacity: 0, y:50}} 
         whileInView={{opacity: 1, y:0}} 
         transition={{duration:0.8}} 
         viewport={{once:true}}
       >
         <div className="bg-[#000010]">
-        <h1 className="text-white text-center py-4 lg:text-4xl font-semibold w-full z-30 drop-shadow-lg">
+        <h1 className="text-white text-center py-3 md:py-4 text-2xl md:text-3xl lg:text-4xl font-semibold w-full z-30 drop-shadow-lg">
           Find a Chapter
         </h1>
         </div>

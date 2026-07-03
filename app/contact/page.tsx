@@ -41,29 +41,29 @@ export default function contact(){
     };
 
     return(
-        <main className="relative min-h-screen mb-32">
+        <main className="relative min-h-screen mb-16 lg:mb-32 overflow-x-hidden">
         
-        <div className="relative h-[60vh] w-full flex items-center mb-16">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#000010_20%,transparent_100%)] z-10"></div>
+        <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full flex items-center justify-center lg:justify-start mb-12 lg:mb-16">
+            <div className="absolute inset-0 bg-black/40 lg:bg-transparent lg:bg-[linear-gradient(to_right,#000010_20%,transparent_100%)] z-10"></div>
             <Image className="object-cover object-center absolute inset-0" src="/images/ContactPageHero.jpg" fill alt="Contact Background"/>
             
-            <div className="relative z-20 ml-32">
-                <h1 className="text-white text-5xl md:text-7xl font-semibold font-Josefin leading-tight">Have a Question?<br/>Want to Get Involved?</h1>
+            <div className="relative z-20 mx-6 lg:mx-0 lg:ml-32 text-center lg:text-left">
+                <h1 className="text-white text-3xl md:text-5xl lg:text-7xl font-semibold font-Josefin leading-tight">Have a Question?<br className="hidden md:block"/>Want to Get Involved?</h1>
             </div>
         </div>
 
-        <div className="flex w-full pl-32 pr-20 gap-10 xl:gap-16 relative z-20 justify-between items-start">
+        <div className="flex flex-col lg:flex-row w-full px-6 md:px-16 lg:px-0 lg:pl-32 lg:pr-20 gap-12 lg:gap-10 xl:gap-16 relative z-20 justify-between items-center lg:items-start">
             
             <motion.div 
-                className="w-[20%] flex flex-col"
+                className="w-full md:w-[70%] lg:w-[20%] flex flex-col items-center lg:items-start text-center lg:text-left"
                 initial={{opacity: 0, y:50}} 
                 whileInView={{opacity: 1, y:0}} 
                 transition={{duration:0.8}} 
                 viewport={{once:true}}
             >
-                <h1 className="text-white text-2xl font-bold mb-6">FIND YOUR LOCAL<br/>NEIGHBOURNET</h1>
-                <Link href="/findYourNeighbourNet">
-                    <button className="border-2 border-[#2683EB] bg-[#2683EB] text-white rounded-xl text-xl font-medium px-6 py-4 hover:bg-[#000010] transition-all duration-300 w-full flex items-center justify-between">
+                <h1 className="text-white text-xl lg:text-2xl font-bold mb-4 lg:mb-6">FIND YOUR LOCAL<br/>NEIGHBOURNET</h1>
+                <Link href="/findYourNeighbourNet" className="w-full">
+                    <button className="border-2 border-[#2683EB] bg-[#2683EB] text-white rounded-xl text-lg lg:text-xl font-medium px-4 lg:px-6 py-3 lg:py-4 hover:bg-[#000010] transition-all duration-300 w-full flex items-center justify-between">
                         <span>Find your NeighbourNet</span>
                         <span>🔍</span>
                     </button>
@@ -71,16 +71,16 @@ export default function contact(){
             </motion.div>
 
             <motion.div 
-                className="w-[38%] flex flex-col"
+                className="w-full md:w-[80%] lg:w-[38%] flex flex-col"
                 initial={{opacity: 0, y:50}} 
                 whileInView={{opacity: 1, y:0}} 
                 transition={{duration:0.8}} 
                 viewport={{once:true}}
             >
-                <form onSubmit={onSubmit} className="w-full border border-[#2683EB] rounded-2xl p-6 flex flex-col gap-4 bg-[#000010]/40 backdrop-blur-sm">
+                <form onSubmit={onSubmit} className="w-full border border-[#2683EB] rounded-2xl p-5 lg:p-6 flex flex-col gap-4 bg-[#000010]/40 backdrop-blur-sm">
                     <p className="text-gray-400 text-sm mb-2">*Contacting YM National</p>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input 
                             type="text" 
                             name="name"
@@ -97,7 +97,7 @@ export default function contact(){
                         />
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input 
                             type="text" 
                             name="City"
@@ -130,26 +130,26 @@ export default function contact(){
             </motion.div>
 
             <motion.div 
-                className="w-[38%] flex flex-col"
+                className="w-full md:w-[80%] lg:w-[38%] flex flex-col text-center lg:text-left"
                 initial={{opacity: 0, y:50}} 
                 whileInView={{opacity: 1, y:0}} 
                 transition={{duration:0.8}} 
                 viewport={{once:true}}
             >
-                <h1 className="text-white text-xl font-bold mb-6 uppercase">General Young Muslims<br/>Contact Information</h1>
+                <h1 className="text-white text-lg lg:text-xl font-bold mb-4 lg:mb-6 uppercase">General Young Muslims<br/>Contact Information</h1>
                 
-                <div className="grid grid-cols-2 gap-4 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
 
-                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-start bg-[#000010]/40 backdrop-blur-sm">
-                        <Mail className="text-[#2683EB] w-5 h-5 shrink-0 mt-1" />
+                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-center sm:items-start lg:items-start justify-center sm:justify-start text-left bg-[#000010]/40 backdrop-blur-sm">
+                        <Mail className="text-[#2683EB] w-5 h-5 shrink-0 mt-0 sm:mt-1" />
                         <div className="flex flex-col">
                             <span className="text-white font-bold text-sm mb-1">Main Email</span>
                             <span className="text-white text-xs">ym.national@Icna.ca</span>
                         </div>
                     </div>
 
-                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-start bg-[#000010]/40 backdrop-blur-sm">
-                        <User className="text-[#2683EB] w-5 h-5 shrink-0 mt-1" />
+                    <div className="border border-[#2683EB] rounded-xl p-4 flex gap-3 items-center sm:items-start lg:items-start justify-center sm:justify-start text-left bg-[#000010]/40 backdrop-blur-sm">
+                        <User className="text-[#2683EB] w-5 h-5 shrink-0 mt-0 sm:mt-1" />
                         <div className="flex flex-col">
                             <span className="text-white font-bold text-sm mb-1">Lead Contact</span>
                             <span className="text-white text-xs">Brother Owais Aziz</span>

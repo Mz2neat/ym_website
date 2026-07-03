@@ -57,24 +57,24 @@ export default function Activities() {
   }, [focused]);
 
   return (
-    <section className="bg-[#0a0f24] rounded-2xl p-8 md:p-12">
-      <div className="flex flex-col gap-8 md:flex-row md:items-center">
+    <section className="bg-[#0a0f24] rounded-2xl p-6 md:p-12">
+      <div className="flex flex-col gap-6 md:gap-8 md:flex-row md:items-center">
         {/* Left info panel */}
-        <div className="md:w-1/4 shrink-0 text-left">
-          <p className="text-sm font-semibold tracking-widest text-[#2683EB] uppercase">
+        <div className="w-full md:w-1/4 shrink-0 text-center md:text-left">
+          <p className="text-xs md:text-sm font-semibold tracking-widest text-[#2683EB] uppercase">
             Our Activities
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-white">
+          <h2 className="mt-2 md:mt-3 text-2xl md:text-3xl font-bold leading-tight text-white">
             Real Moments.
             <br />
             Real Impact.
           </h2>
-          <p className="mt-4 text-sm leading-7 text-gray-300">
+          <p className="mt-3 md:mt-4 text-xs md:text-sm leading-6 md:leading-7 text-gray-300">
             From halaqahs and sports nights to retreats and community service,
             each space creates experiences that build faith, friendships, and leaders.
           </p>
           <button
-            className="mt-6 rounded-lg border border-[#2683EB] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#2683EB]"
+            className="mt-5 md:mt-6 w-[80%] md:w-auto mx-auto md:mx-0 rounded-lg border border-[#2683EB] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#2683EB]"
             onClick={() => (window.location.href = "/activities")}
           >
             Explore YM Activities
@@ -83,7 +83,7 @@ export default function Activities() {
 
         {/* Scrollable image row */}
         <div
-          className="relative md:w-3/4"
+          className="relative w-full md:w-3/4 mt-4 md:mt-0"
           tabIndex={0}
           onMouseEnter={() => setFocused(true)}
           onMouseLeave={() => setFocused(false)}
@@ -94,9 +94,9 @@ export default function Activities() {
           <button
             onClick={() => scrollByCard("left")}
             aria-label="Scroll left"
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white backdrop-blur transition hover:bg-[#2683EB]"
+            className="absolute left-1 md:left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-1.5 md:p-2 text-white backdrop-blur transition hover:bg-[#2683EB]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -104,16 +104,16 @@ export default function Activities() {
           {/* Cards */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-3 md:gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {activities.map((item) => (
               <div
                 key={item.label}
-                className="relative aspect-[3/4] w-40 shrink-0 overflow-hidden rounded-xl md:w-48"
+                className="relative aspect-[3/4] w-32 md:w-40 lg:w-48 shrink-0 overflow-hidden rounded-xl"
               >
                 <Image src={item.src} alt={item.label} fill className="object-cover" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                  <p className="text-sm font-semibold text-white">{item.label}</p>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 md:p-3">
+                  <p className="text-xs md:text-sm font-semibold text-white">{item.label}</p>
                 </div>
               </div>
             ))}
@@ -123,9 +123,9 @@ export default function Activities() {
           <button
             onClick={() => scrollByCard("right")}
             aria-label="Scroll right"
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white backdrop-blur transition hover:bg-[#2683EB]"
+            className="absolute right-1 md:right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-1.5 md:p-2 text-white backdrop-blur transition hover:bg-[#2683EB]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
