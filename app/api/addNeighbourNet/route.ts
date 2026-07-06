@@ -1,2 +1,3 @@
-import { NextResponse } from "next/server";
-import supabase from "@/lib/supabase/distance";
+/*import { NextResponse } from "next/server";
+import distance from "@/lib/supabase/distance";
+*/
