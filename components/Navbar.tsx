@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useState } from 'react';
 import Image from "next/image";
+import SecretLogo from "@/components/SecretLogo";
 
 export default function Navbar(){
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,15 +13,7 @@ export default function Navbar(){
         <nav className="relative flex items-center justify-between p-4 bg-black text-sm md:text-base lg:text-lg xl:text-xl text-white">
 
             <div className="shrink-0">
-                <Link href="/">
-                <Image
-                src="/images/YMLogoNavBar.png"
-                alt="YM Logo"
-                width={100}
-                height={75}
-                className="w-16 md:w-20 lg:w-[100px] h-auto"
-                />
-                </Link>
+                <SecretLogo />
             </div>
             <ul className="hidden lg:flex gap-6 flex-wrap">
                 <Link className="hover:text-[#2683EB]" href="/">

@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "./logoutbutton";
 import MembersManager from "./MembersManager";
+import ChapterManager from "./ChapterManager";
 
 export default async function AdminPage() {
   const supabase = await createClient();
@@ -37,11 +38,7 @@ export default async function AdminPage() {
 
       <MembersManager />
 
-      {isNational && (
-        <div className="max-w-5xl mx-auto px-6 pb-10">
-          {/* ChapterManager goes here next */}
-        </div>
-      )}
+      {isNational && <ChapterManager />}
     </div>
   );
 }
