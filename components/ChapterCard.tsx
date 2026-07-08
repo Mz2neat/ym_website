@@ -6,7 +6,14 @@ import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
 
-export default function ChapterCard ({ chapter }: any){
+type Chapter = {
+    id: string;
+    name: string;
+    description: string;
+    image_name: string;
+};
+
+export default function ChapterCard ({ chapter }: { chapter: Chapter }){
     return(
         <motion.div
         key={chapter.id}

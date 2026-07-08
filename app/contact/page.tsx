@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MapPin, Phone, Mail, User } from "lucide-react";
+import { Mail, User } from "lucide-react";
 import { useState } from "react";
 import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
 
-export default function contact(){
+export default function Contact(){
 
     const [result, setResult] = useState("Submit");
 

@@ -49,7 +49,7 @@ export async function getCoordinates(postalCode: string)
 
     }
 
-    catch (error)
+    catch
     {
 
         return null;

@@ -7,10 +7,15 @@ import {findNearestNeighbourNet} from "@/lib/distance";
 import { motion } from "framer-motion";
 import { fadeUp, popIn } from "@/lib/motion";
 
-export default function findYourNeighbourNet(){
+type NeighbourNetResult = {
+    neighbournet_name: string;
+    distanceKms: number;
+};
+
+export default function FindYourNeighbourNet(){
 
     const [postalCode, setPostalCode] = useState("");
-    const [result, setResult] = useState<any>(null);
+    const [result, setResult] = useState<NeighbourNetResult | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 

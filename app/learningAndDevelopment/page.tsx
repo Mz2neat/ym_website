@@ -2,7 +2,6 @@
 
 // learningAndDevelopment/page.tsx
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -24,7 +23,7 @@ export default function LearningAndDevelopment(){
             
             <div className="mb-8 lg:mb-10">
                 <h1 className="text-white text-xl lg:text-2xl font-medium mb-2 lg:mb-4">Why Islamic Education Matters:</h1>
-                <p className="text-white text-base md:text-lg lg:text-xl">Islamic education provides young Muslims with the knowledge, confidence, and values needed to navigate today's world while staying connected to their faith. Through engaging halaqahs, meaningful discussions, and practical lessons, YM helps youth develop a deeper understanding of Islam and apply its teachings in their daily lives.</p>
+                <p className="text-white text-base md:text-lg lg:text-xl">Islamic education provides young Muslims with the knowledge, confidence, and values needed to navigate today&apos;s world while staying connected to their faith. Through engaging halaqahs, meaningful discussions, and practical lessons, YM helps youth develop a deeper understanding of Islam and apply its teachings in their daily lives.</p>
             </div>
 
             <Link
@@ -40,7 +39,7 @@ export default function LearningAndDevelopment(){
 
             <div className="mb-8 lg:mb-10">
                 <h1 className="text-white text-xl lg:text-2xl font-medium mb-2 lg:mb-4">Self-Development Through Community:</h1>
-                <p className="text-white text-base md:text-lg lg:text-xl">Growth happens best when you're surrounded by people who inspire and support you. YM creates an environment where youth can build leadership skills, strengthen their character, and develop lifelong friendships. Through mentorship, teamwork, and shared experiences, members are encouraged to become the best version of themselves.</p>
+                <p className="text-white text-base md:text-lg lg:text-xl">Growth happens best when you&apos;re surrounded by people who inspire and support you. YM creates an environment where youth can build leadership skills, strengthen their character, and develop lifelong friendships. Through mentorship, teamwork, and shared experiences, members are encouraged to become the best version of themselves.</p>
             </div>
 
             <div className="mb-12 lg:mb-16">

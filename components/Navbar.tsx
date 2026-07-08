@@ -3,7 +3,6 @@
 
 import Link from "next/link";
 import { useState } from 'react';
-import Image from "next/image";
 import SecretLogo from "@/components/SecretLogo";
 import CtaButton from "@/components/CtaButton";
 

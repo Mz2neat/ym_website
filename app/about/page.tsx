@@ -77,7 +77,7 @@ export default function about() {
                 What is YM a Halaqah
               </h2>
               <p className="mt-4 lg:mt-6 text-sm lg:text-base leading-6 lg:leading-8 text-white">
-                YM Halaqas are a space to chill, play, connect, and grow. Whether you come for the game, the people, or just to see what it's about, you'll find a community where Islam feels real, relevant, and connected to everyday life. Through activities, conversations, and brotherhood, YM helps you build friendships, strengthen your faith, and find a place where you truly belong.
+                YM Halaqas are a space to chill, play, connect, and grow. Whether you come for the game, the people, or just to see what it&apos;s about, you&apos;ll find a community where Islam feels real, relevant, and connected to everyday life. Through activities, conversations, and brotherhood, YM helps you build friendships, strengthen your faith, and find a place where you truly belong.
               </p>
             </div>
             <div className="relative overflow-hidden bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl p-6 lg:p-8">
@@ -85,7 +85,7 @@ export default function about() {
                 What does a YM Halaqah Include?
               </h2>
               <p className="mt-4 lg:mt-6 text-sm lg:text-base leading-6 lg:leading-8 text-white mx-auto text-center">
-                Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It's about learning the Deen while building brotherhood in a space where you truly belong.
+                Every YM gathering begins with a relatable Islamic reminder, a short, interactive talk led by a YM member or guest speaker, followed by an engaging activity like basketball, soccer, or gaming. It&apos;s about learning the Deen while building brotherhood in a space where you truly belong.
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@ import { useState } from "react";
 import CtaButton from "@/components/CtaButton";
 import { fadeLeft, fadeRight } from "@/lib/motion";
 
-export default function donate(){
+export default function Donate(){
     const [amount, setAmount] = useState("50.00");
     const [activePreset, setActivePreset] = useState("$50");
 
