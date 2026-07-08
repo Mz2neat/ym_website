@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from 'react';
 import Image from "next/image";
 import SecretLogo from "@/components/SecretLogo";
+import CtaButton from "@/components/CtaButton";
 
 export default function Navbar(){
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -78,9 +79,9 @@ export default function Navbar(){
             
             <div className="flex-1 flex justify-end">
                 <Link href="join">
-                <button className="bg-[#002bb3] text-xs md:text-sm lg:text-lg text-white px-4 md:px-5 py-2 lg:py-2 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,1)]">
+                <CtaButton variant="hero-solid" className="text-xs md:text-sm lg:text-lg text-white hover:text-black px-4 md:px-5 py-2 lg:py-2 rounded-md font-semibold">
                     Join Now
-                </button>
+                </CtaButton>
                 </Link>
             </div>
         </div>

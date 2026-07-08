@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import CtaButton from "@/components/CtaButton";
+import { fadeLeft, fadeRight } from "@/lib/motion";
 
 export default function donate(){
     const [amount, setAmount] = useState("50.00");
@@ -44,10 +46,7 @@ export default function donate(){
                 
                 <motion.div 
                     className="w-full lg:w-[50%] flex flex-col justify-center text-center lg:text-left"
-                    initial={{opacity: 0, x:-50}} 
-                    whileInView={{opacity: 1, x:0}} 
-                    transition={{duration:0.8}} 
-                    viewport={{once:true}}
+                    {...fadeLeft}
                 >
                     <h1 className="text-white text-4xl md:text-5xl lg:text-7xl font-semibold font-Josefin mb-4 lg:mb-6">Support Our<br className="hidden lg:block"/>Vision</h1>
                     <p className="text-gray-400 text-base md:text-xl lg:text-2xl font-medium max-w-full lg:max-w-lg mx-auto lg:mx-0">
@@ -57,10 +56,7 @@ export default function donate(){
 
                 <motion.div 
                     className="w-full lg:w-[50%] relative h-auto transform-gpu will-change-transform bg-[#1C1C28] rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col"
-                    initial={{opacity: 0, x:50}} 
-                    whileInView={{opacity: 1, x:0}} 
-                    transition={{duration:0.8}} 
-                    viewport={{once:true}}
+                    {...fadeRight}
                 >
                     <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 lg:mb-8 text-center lg:text-left">Make a Contribution</h2>
                     
@@ -133,10 +129,10 @@ export default function donate(){
                         </label>
                     </div>
 
-                        <button onClick={handlePaymentPopup}
-                        className="w-full mt-8 lg:mt-10 bg-[#2683EB] text-white rounded-lg py-3 lg:py-4 font-bold text-lg lg:text-xl hover:bg-[#000010] border-2 border-transparent hover:border-[#2683EB] transition-all duration-300 shadow-[0_0_20px_rgba(38,131,235,0.4)] hover:shadow-none">
+                        <CtaButton onClick={handlePaymentPopup} variant="bar"
+                        className="w-full mt-8 lg:mt-10 text-white rounded-lg py-3 lg:py-4 font-bold text-lg lg:text-xl shadow-[0_0_20px_rgba(38,131,235,0.4)] hover:shadow-none">
                             Continue to Secure Payment
-                        </button>
+                        </CtaButton>
                 </motion.div>
 
             </div>

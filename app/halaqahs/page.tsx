@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import CtaButton from "@/components/CtaButton";
+import { fadeUp } from "@/lib/motion";
 
 export default function halaqahs(){
   return (
@@ -22,10 +24,7 @@ export default function halaqahs(){
         
         <motion.div 
         className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] p-6 md:p-8 lg:p-12 rounded-2xl flex flex-col"
-        initial={{opacity: 0, y:50}} 
-        whileInView={{opacity: 1, y:0}} 
-        transition={{duration:0.8}} 
-        viewport={{once:true}}
+        {...fadeUp}
       >
         <div className="text-[#2683EB] text-lg md:text-xl lg:text-3xl font-medium mb-4 lg:mb-8">
           Every week follows a simple, proven formula:
@@ -51,11 +50,8 @@ export default function halaqahs(){
 
         <motion.div 
           className="overflow-hidden transform-gpu will-change-transform bg-[#0B0F14]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col h-64 md:h-80 lg:h-auto"
-          initial={{opacity: 0, y:50}} 
-          whileInView={{opacity: 1, y:0}} 
-          transition={{duration:0.8}} 
-          viewport={{once:true}}
-        > 
+          {...fadeUp}
+        >
           <div className="relative h-full [mask-image:linear-gradient(to_bottom,transparent,black_20%)]">
           <Image className="object-cover object-right object-top" src="/images/Halaqah4.jpeg" fill alt="Sports"></Image>
           </div>
@@ -68,9 +64,9 @@ export default function halaqahs(){
 
       <div className="flex justify-center mb-16 lg:mb-32 relative z-20">
           <Link href="/findYourNeighbourNet">
-            <button className="border-2 border-[#2683EB] bg-[#0B0F14] text-white rounded-2xl text-lg md:text-2xl lg:text-3xl mt-8 lg:mt-10 font-medium px-8 lg:px-10 py-4 lg:py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
+            <CtaButton variant="outline" className="text-white rounded-2xl text-lg md:text-2xl lg:text-3xl mt-8 lg:mt-10 px-8 lg:px-10 py-4 lg:py-6">
               Find a Halaqah
-            </button>
+            </CtaButton>
           </Link>
           </div>
 

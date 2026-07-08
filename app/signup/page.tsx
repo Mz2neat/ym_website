@@ -16,15 +16,20 @@ export default function SignupPage() {
 
     if (!email.trim()) { setError("Email is required."); return; }
     if (!email.includes("@")) { setError("That email doesn't look valid."); return; }
-    if (password.length < 8) { setError("Password must be at least 8 characters."); return; }
-    if (password !== confirm) { setError("Passwords don't match."); return; }
+
+    if (password.length < 12) {
+      setError("Password must be at least 12 characters."); return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must include at least one capital letter."); return;
+    }
+    if (password !== confirm) {
+      setError("Passwords don't match."); return;
+    }
 
     setLoading(true);
     const supabase = createClient();
-    const { error } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-    });
+    const { error } = await supabase.auth.signUp({ email: email.trim(), password });
 
     if (error) {
       setError(error.message);
@@ -47,6 +52,7 @@ export default function SignupPage() {
       </div>
     );
   }
+  
 
   return (
     <div className="max-w-sm mx-auto mt-24 flex flex-col gap-3 text-white px-6">
@@ -60,11 +66,15 @@ export default function SignupPage() {
       />
       <input
         type="password"
-        placeholder="Password (min 8 characters)"
+        placeholder="Password (12+ characters, 1 capital)"
         className="bg-black/40 border border-white/20 rounded px-3 py-2"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <ul className="text-xs space-y-1">
+        <Rule ok={password.length >= 12}>At least 12 characters</Rule>
+        <Rule ok={/[A-Z]/.test(password)}>At least one capital letter</Rule>
+      </ul>
       <input
         type="password"
         placeholder="Confirm password"
@@ -84,5 +94,13 @@ export default function SignupPage() {
         Already have an account? <a href="/login" className="text-[#2683EB]">Log in</a>
       </p>
     </div>
+    
+  );
+}
+ function Rule({ ok, children }: { ok: boolean; children: React.ReactNode }) {
+  return (
+    <li className={ok ? "text-green-400" : "text-white/40"}>
+      {ok ? "✓" : "○"} {children}
+    </li>
   );
 }

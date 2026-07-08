@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { MapPin, Phone, Mail, User } from "lucide-react";
 import { useState } from "react";
+import CtaButton from "@/components/CtaButton";
+import { fadeUp } from "@/lib/motion";
 
 export default function contact(){
 
@@ -56,26 +58,20 @@ export default function contact(){
             
             <motion.div 
                 className="w-full md:w-[70%] lg:w-[20%] flex flex-col items-center lg:items-start text-center lg:text-left"
-                initial={{opacity: 0, y:50}} 
-                whileInView={{opacity: 1, y:0}} 
-                transition={{duration:0.8}} 
-                viewport={{once:true}}
+                {...fadeUp}
             >
                 <h1 className="text-white text-xl lg:text-2xl font-bold mb-4 lg:mb-6">FIND YOUR LOCAL<br/>NEIGHBOURNET</h1>
                 <Link href="/findYourNeighbourNet" className="w-full">
-                    <button className="border-2 border-[#2683EB] bg-[#2683EB] text-white rounded-xl text-lg lg:text-xl font-medium px-4 lg:px-6 py-3 lg:py-4 hover:bg-[#000010] transition-all duration-300 w-full flex items-center justify-between">
+                    <CtaButton variant="solid" className="text-white rounded-xl text-lg lg:text-xl px-4 lg:px-6 py-3 lg:py-4 w-full flex items-center justify-between">
                         <span>Find your NeighbourNet</span>
                         <span>🔍</span>
-                    </button>
+                    </CtaButton>
                 </Link>
             </motion.div>
 
             <motion.div 
                 className="w-full md:w-[80%] lg:w-[38%] flex flex-col"
-                initial={{opacity: 0, y:50}} 
-                whileInView={{opacity: 1, y:0}} 
-                transition={{duration:0.8}} 
-                viewport={{once:true}}
+                {...fadeUp}
             >
                 <form onSubmit={onSubmit} className="w-full border border-[#2683EB] rounded-2xl p-5 lg:p-6 flex flex-col gap-4 bg-[#000010]/40 backdrop-blur-sm">
                     <p className="text-gray-400 text-sm mb-2">*Contacting YM National</p>
@@ -120,21 +116,19 @@ export default function contact(){
                         className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] resize-none placeholder:text-gray-500"
                     ></textarea>
                     
-                    <button 
-                        type="submit" 
-                        className="w-full bg-[#2683EB] text-white rounded-lg py-3 font-medium text-lg hover:bg-[#000010] border-2 border-transparent hover:border-[#2683EB] transition-all duration-300 mt-2"
+                    <CtaButton
+                        type="submit"
+                        variant="bar"
+                        className="w-full text-white rounded-lg py-3 text-lg mt-2"
                     >
                         {result}
-                    </button>
+                    </CtaButton>
                 </form>
             </motion.div>
 
             <motion.div 
                 className="w-full md:w-[80%] lg:w-[38%] flex flex-col text-center lg:text-left"
-                initial={{opacity: 0, y:50}} 
-                whileInView={{opacity: 1, y:0}} 
-                transition={{duration:0.8}} 
-                viewport={{once:true}}
+                {...fadeUp}
             >
                 <h1 className="text-white text-lg lg:text-xl font-bold mb-4 lg:mb-6 uppercase">General Young Muslims<br/>Contact Information</h1>
                 

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, Star, Users } from "lucide-react";
 import Link from "next/link";
+import CtaButton from "@/components/CtaButton";
+import { fadeUp } from "@/lib/motion";
 
 export default function Activities(){
     return(
@@ -38,10 +40,7 @@ export default function Activities(){
 
       <motion.div 
         className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] mt-16 lg:mt-32 mx-auto relative z-20 h-auto w-[90%] lg:w-[75%] max-w-8xl rounded-2xl mb-12 lg:mb-16 flex flex-col lg:flex-row"
-        initial={{opacity: 0, y:50}} 
-        whileInView={{opacity: 1, y:0}} 
-        transition={{duration:0.8}} 
-        viewport={{once:true}}
+        {...fadeUp}
       >
         <div className="mb-6 w-full lg:w-[50%] py-6 lg:py-0 text-center lg:text-left">
           <div className="text-[#2683EB] mx-6 lg:mx-0 lg:ml-16 mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl font-medium relative z-15">
@@ -54,9 +53,9 @@ export default function Activities(){
             </div>
           <div className="flex justify-center mb-4 relative z-15">
             <Link href="/halaqahs">
-            <button className="border-2 border-[#2683EB] bg-[#000010] text-white rounded-2xl text-lg md:text-2xl lg:text-3xl mt-6 lg:mt-10 font-medium px-8 lg:px-10 py-4 lg:py-6 hover:bg-[#2683EB] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]">
+            <CtaButton variant="outline" className="text-white rounded-2xl text-lg md:text-2xl lg:text-3xl mt-6 lg:mt-10 px-8 lg:px-10 py-4 lg:py-6">
               Learn More
-            </button>
+            </CtaButton>
             </Link>
           </div>
         </div>
@@ -70,10 +69,7 @@ export default function Activities(){
         
         <motion.div 
           className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-auto lg:h-135 rounded-2xl flex flex-col text-center lg:text-left"
-          initial={{opacity: 0, y:50}} 
-          whileInView={{opacity: 1, y:0}} 
-          transition={{duration:0.8}} 
-          viewport={{once:true}}
+          {...fadeUp}
         >
           <div className="mb-6 pt-6 lg:pt-0">
             <div className="text-[#2683EB] mx-6 lg:mx-0 lg:ml-16 mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl font-medium">
@@ -90,10 +86,7 @@ export default function Activities(){
 
         <motion.div 
           className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] h-auto lg:h-135 rounded-2xl flex flex-col text-center lg:text-left"
-          initial={{opacity: 0, y:50}} 
-          whileInView={{opacity: 1, y:0}} 
-          transition={{duration:0.8}} 
-          viewport={{once:true}}
+          {...fadeUp}
         >
           <div className="mb-6 pt-6 lg:pt-0">
             <div className="text-[#2683EB] mx-6 lg:mx-0 lg:ml-16 mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl font-medium">

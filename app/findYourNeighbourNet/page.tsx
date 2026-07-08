@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {findNearestNeighbourNet} from "@/lib/distance";
 import { motion } from "framer-motion";
+import { fadeUp, popIn } from "@/lib/motion";
 
 export default function findYourNeighbourNet(){
 
@@ -43,10 +44,7 @@ export default function findYourNeighbourNet(){
 
             <motion.div 
                 className="relative z-20 flex flex-col items-center w-full max-w-4xl px-4 lg:px-0"
-                initial={{opacity: 0, y:30}} 
-                whileInView={{opacity: 1, y:0}} 
-                transition={{duration:0.8}} 
-                viewport={{once:true}}
+                {...fadeUp}
             >
                 <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold font-Josefin mb-6 lg:mb-8 text-center px-2 lg:px-0">Get Connected to your Local NeighbourNet</h1>
                 
@@ -73,8 +71,7 @@ export default function findYourNeighbourNet(){
                 {result && (
                     <motion.div 
                         className="mt-8 lg:mt-12 overflow-hidden bg-[#000010]/70 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col p-6 md:p-8 lg:p-8 w-full md:w-[90%] lg:w-[90%] max-w-2xl text-center"
-                        initial={{opacity: 0, y:20}} 
-                        animate={{opacity: 1, y:0}} 
+                        {...popIn}
                     >
                         <h2 className="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-4">
                             {result.neighbournet_name}

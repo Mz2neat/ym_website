@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import CtaButton from "@/components/CtaButton";
+import { fadeUp } from "@/lib/motion";
 
 export default function join(){
     return(
@@ -12,10 +14,7 @@ export default function join(){
 
             <motion.div 
                 className="relative z-20 mb-8 lg:mb-12 text-center"
-                initial={{opacity: 0, y:30}} 
-                whileInView={{opacity: 1, y:0}} 
-                transition={{duration:0.8}} 
-                viewport={{once:true}}
+                {...fadeUp}
             >
                 
             </motion.div>
@@ -24,10 +23,7 @@ export default function join(){
                 
                 <motion.div 
                     className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col items-center p-6 lg:p-10 h-auto lg:h-[500px] justify-between"
-                    initial={{opacity: 0, y:50}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.8}} 
-                    viewport={{once:true}}
+                    {...fadeUp}
                 >
                     <h1 className="text-[#2683EB] text-2xl lg:text-3xl font-semibold mb-6 lg:mb-8">Join From Link</h1>
                     
@@ -35,18 +31,15 @@ export default function join(){
                         <Image className="object-contain" src="/images/discordJoin.png" fill alt="Discord Card"></Image>
                     </div>
                     <Link href="https://discord.gg/pHzsVEm888" target="_blank" rel="noopener noreferrer" className="w-full flex justify-center">
-                        <button className="w-full md:w-[90%] whitespace-nowrap border-2 border-[#2683EB] bg-[#2683EB] text-white rounded-xl text-lg lg:text-xl font-medium px-4 lg:px-6 py-3 lg:py-4 hover:bg-[#000010] transition-all duration-300">
+                        <CtaButton variant="solid" className="w-full md:w-[90%] whitespace-nowrap text-white rounded-xl text-lg lg:text-xl px-4 lg:px-6 py-3 lg:py-4">
                             Open Discord Link →
-                        </button>
+                        </CtaButton>
                     </Link>
                 </motion.div>
 
                 <motion.div 
                     className="overflow-hidden transform-gpu will-change-transform bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#000010] rounded-2xl flex flex-col items-center p-6 lg:p-10 h-auto lg:h-[500px]"
-                    initial={{opacity: 0, y:50}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.8}} 
-                    viewport={{once:true}}
+                    {...fadeUp}
                 >
                     <h1 className="text-[#2683EB] text-2xl lg:text-3xl font-semibold mb-8 lg:mb-12">Join From QR Code</h1>
                     

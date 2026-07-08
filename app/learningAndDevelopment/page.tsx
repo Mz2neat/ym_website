@@ -6,6 +6,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import CtaButton from "@/components/CtaButton";
+import { fadeUpFast, fadeIn } from "@/lib/motion";
 
 export default function LearningAndDevelopment(){
     const [openModule, setOpenModule] = useState<string | null>(null);
@@ -25,13 +27,15 @@ export default function LearningAndDevelopment(){
                 <p className="text-white text-base md:text-lg lg:text-xl">Islamic education provides young Muslims with the knowledge, confidence, and values needed to navigate today's world while staying connected to their faith. Through engaging halaqahs, meaningful discussions, and practical lessons, YM helps youth develop a deeper understanding of Islam and apply its teachings in their daily lives.</p>
             </div>
 
-            <Link 
+            <Link
             href="https://360.articulate.com/review/content/02e3736c-dc96-4a60-9bcb-a44b092df9cd/review?reviewRequest=b7eea37f-0d29-48c6-ad63-50eec86a3202"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            className="flex w-fit mx-auto lg:mx-0 lg:inline-block border-2 border-[#2683EB] bg-[#000010] text-[#2683EB] rounded-lg text-base lg:text-lg font-medium px-4 lg:px-6 py-2 mb-8 lg:mb-10 hover:bg-[#2683EB] hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(38,131,235,0.8)]"
+            className="flex w-fit mx-auto lg:mx-0 lg:inline-block mb-8 lg:mb-10"
             >
+            <CtaButton variant="outline" className="text-[#2683EB] hover:text-white rounded-lg text-base lg:text-lg px-4 lg:px-6 py-2">
             Learning Modules
+            </CtaButton>
             </Link>
 
             <div className="mb-8 lg:mb-10">
@@ -50,10 +54,7 @@ export default function LearningAndDevelopment(){
                 <motion.div 
                     className={`bg-[#2683EB] text-white p-3 lg:p-4 flex justify-between items-center text-base md:text-lg lg:text-xl font-medium cursor-pointer ${openModule === 'Br.Muqsith' ? 'rounded-t-lg' : 'rounded-lg'}`}
                     onClick={() => toggleModule('Br.Muqsith')}
-                    initial={{opacity: 0, y:20}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.4}} 
-                    viewport={{once:true}}
+                    {...fadeUpFast}
                 >
                     <span>Broader Modules </span>
                     <span>{openModule === 'Br.Muqsith' ? '▼' : '▶'}</span>
@@ -62,9 +63,7 @@ export default function LearningAndDevelopment(){
                 {openModule === 'Br.Muqsith' && (
                     <motion.div 
                         className="bg-white text-black p-4 lg:p-8 rounded-b-lg"
-                        initial={{opacity: 0}} 
-                        animate={{opacity: 1}} 
-                        transition={{duration:0.3}} 
+                        {...fadeIn}
                     >
                        <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2 lg:mb-4">These are broader modules made by brother Muqsit </h1>
 <p className="text-base lg:text-lg">
@@ -86,10 +85,7 @@ export default function LearningAndDevelopment(){
                 <motion.div 
                     className={`bg-[#2683EB] text-white p-3 lg:p-4 flex justify-between items-center text-base md:text-lg lg:text-xl font-medium cursor-pointer ${openModule === 'reverts' ? 'rounded-t-lg' : 'rounded-lg'}`}
                     onClick={() => toggleModule('reverts')}
-                    initial={{opacity: 0, y:20}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.4}} 
-                    viewport={{once:true}}
+                    {...fadeUpFast}
                 >
                     <span>Learning Associates Modules </span>
                     <span>{openModule === 'reverts' ? '▼' : '▶'}</span>
@@ -98,9 +94,7 @@ export default function LearningAndDevelopment(){
                 {openModule === 'reverts' && (
                     <motion.div 
                         className="bg-white text-black p-4 lg:p-8 rounded-b-lg"
-                        initial={{opacity: 0}} 
-                        animate={{opacity: 1}} 
-                        transition={{duration:0.3}} 
+                        {...fadeIn}
                     >
                         <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2 lg:mb-4">Coming Soon</h1>
                         <p className="text-base lg:text-lg">This module is currently under development. Please check back later!</p>
@@ -112,10 +106,7 @@ export default function LearningAndDevelopment(){
                 <motion.div 
                     className={`bg-[#2683EB] text-white p-3 lg:p-4 flex justify-between items-center text-base md:text-lg lg:text-xl font-medium cursor-pointer ${openModule === 'beginner' ? 'rounded-t-lg' : 'rounded-lg'}`}
                     onClick={() => toggleModule('beginner')}
-                    initial={{opacity: 0, y:20}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.4}} 
-                    viewport={{once:true}}
+                    {...fadeUpFast}
                 >
                     <span>Beginner modules</span>
                     <span>{openModule === 'beginner' ? '▼' : '▶'}</span>
@@ -124,9 +115,7 @@ export default function LearningAndDevelopment(){
                 {openModule === 'beginner' && (
                     <motion.div 
                         className="bg-white text-black p-4 lg:p-8 rounded-b-lg"
-                        initial={{opacity: 0}} 
-                        animate={{opacity: 1}} 
-                        transition={{duration:0.3}} 
+                        {...fadeIn}
                     >
                         <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2 lg:mb-4">Coming Soon</h1>
                         <p className="text-base lg:text-lg">This module is currently under development. Please check back later!</p>
@@ -138,10 +127,7 @@ export default function LearningAndDevelopment(){
                 <motion.div 
                     className={`bg-[#2683EB] text-white p-3 lg:p-4 flex justify-between items-center text-base md:text-lg lg:text-xl font-medium cursor-pointer ${openModule === 'intermediate' ? 'rounded-t-lg' : 'rounded-lg'}`}
                     onClick={() => toggleModule('intermediate')}
-                    initial={{opacity: 0, y:20}} 
-                    whileInView={{opacity: 1, y:0}} 
-                    transition={{duration:0.4}} 
-                    viewport={{once:true}}
+                    {...fadeUpFast}
                 >
                     <span>Intermediate modules</span>
                     <span>{openModule === 'intermediate' ? '▼' : '▶'}</span>
@@ -150,9 +136,7 @@ export default function LearningAndDevelopment(){
                 {openModule === 'intermediate' && (
                     <motion.div 
                         className="bg-white text-black p-4 lg:p-8 rounded-b-lg"
-                        initial={{opacity: 0}} 
-                        animate={{opacity: 1}} 
-                        transition={{duration:0.3}} 
+                        {...fadeIn}
                     >
                         <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2 lg:mb-4">Coming Soon</h1>
                         <p className="text-base lg:text-lg">This module is currently under development. Please check back later!</p>
