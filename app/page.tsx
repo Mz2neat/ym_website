@@ -20,7 +20,7 @@ export default function Home(){
       </div>
       {/*Gradient Image in Background*/}
       <div className="absolute top-0 right-0 w-full h-[50vh] md:w-[70vw] lg:h-[100vh] lg:w-[70vw] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#0B0F14_90%)] z-10">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#000010_90%)] z-10">
       </div>
       <Image className="object-contain scale-150" src="/images/YMLogoBlurred.webp" fill alt="YM Logo"/>
       </div>

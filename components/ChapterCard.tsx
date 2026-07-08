@@ -21,7 +21,7 @@ export default function ChapterCard ({ chapter }: { chapter: Chapter }){
         {...fadeUp}
       >
         <h1 className="text-center lg:text-left lg:ml-6 py-6 lg:py-8 text-2xl md:text-3xl lg:text-4xl font-semibold">
-          {chapter.name}
+          {chapter.chapter_name}
         </h1>
         <div className="relative flex flex-col lg:flex-row flex-1 min-h-[125px] pb-6 lg:pb-8">
         <div className="relative w-[90%] lg:w-[40%] h-48 lg:h-auto mx-auto lg:mx-0 lg:ml-6 mb-6 lg:mb-0">

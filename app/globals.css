@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-Josefin: var(--font-josefin), "Josefin Sans", sans-serif;
+  --font-inter: var(--font-inter), "Inter", sans-serif;
 }
 
 ::-webkit-scrollbar { display: none; }

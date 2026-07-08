@@ -4,13 +4,31 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mail, User } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
+import {supabase} from "@/lib/supabase/public";
 
 export default function Contact(){
 
     const [result, setResult] = useState("Submit");
+    const [chapters, setChapters] = useState<any[]>([]);
+
+    const [selectedKey, setSelectedKey] = useState("35944dc-5376-4a7f-a344-e49bdbc5b9ec");
+
+    useEffect(() => {
+        const fetchChapters = async () => {
+            const {data, error} = await supabase.from('chapters').select('*');
+            if (data){
+                setChapters(data);
+            }
+            else if (error){
+                console.error("Error fethching chapters:", error);
+            }
+        };
+        fetchChapters();
+    }, []);
+
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -18,7 +36,7 @@ export default function Contact(){
 
         const formData = new FormData(event.currentTarget);
 
-        formData.append("access_key", "335944dc-5376-4a7f-a344-e49bdbc5b9ec");
+        formData.append("access_key", selectedKey);
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method:"POST",
@@ -74,8 +92,25 @@ export default function Contact(){
                 {...fadeUp}
             >
                 <form onSubmit={onSubmit} className="w-full border border-[#2683EB] rounded-2xl p-5 lg:p-6 flex flex-col gap-4 bg-[#000010]/40 backdrop-blur-sm">
-                    <p className="text-gray-400 text-sm mb-2">*Contacting YM National</p>
+                    <p className="text-gray-400 text-sm mb-2">Who do you want to contact?</p>
                     
+                    <select
+                    onChange={(e) => setSelectedKey(e.target.value)}
+                    className="bg-[#000010]/80 border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] mb-2 appearance-none cursor-pointer">
+                    
+                    <option value="335944dc-5376-4a7f-a344-e49bdbc5b9ec" className="bg-[#000010]">
+                            YM National (General Inquiry)
+                        </option>
+
+                        {chapters.map((chapter) => (
+                            chapter.contact_access_id && (
+                                <option key = {chapter.chapter_name} value={chapter.contact_access_id} className="bg-[#000010]">
+                                    YM {chapter.chapter_name}
+                                    </option>
+                            )
+                        ))}
+                        </select>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input 
                             type="text" 
