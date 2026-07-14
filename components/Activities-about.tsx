@@ -106,11 +106,11 @@ export default function Activities() {
             ref={scrollRef}
             className="flex gap-3 md:gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            {activities.map((item) => (
-              <div
-                key={item.label}
+            {activities.map((item, index) => (
+            <div
+                key={`${item.label}-${index}`}
                 className="relative aspect-[3/4] w-32 md:w-40 lg:w-48 shrink-0 overflow-hidden rounded-xl"
-              >
+            >
                 <Image src={item.src} alt={item.label} fill className="object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 md:p-3">
                   <p className="text-xs md:text-sm font-semibold text-white">{item.label}</p>

@@ -4,7 +4,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import CtaButton from "@/components/CtaButton";
-import { fadeLeft, fadeRight } from "@/lib/motion";
+import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
+import Script from "next/script";
+import {useEffect} from "react";
 
 export default function Donate(){
     const [amount, setAmount] = useState("50.00");
@@ -23,6 +25,9 @@ export default function Donate(){
         setAmount(e.target.value);
         setActivePreset("Other");
     };
+
+    //Popup Payment Option
+    /*
     const handlePaymentPopup = () => {
         const popupWidth = 600;
         const popupHeight = 800;
@@ -38,6 +43,19 @@ export default function Donate(){
             `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=yes,status=no,location=no,toolbar=no`
         )
     };
+    */
+   useEffect(() => {
+        const zeffyScript = document.createElement("script");
+        zeffyScript.src ="https://www.zeffy.com/embed/v2/zeffy-embed.js";
+        zeffyScript.async = true;
+
+        document.body.appendChild(zeffyScript);
+
+        return () => {
+            document.body.removeChild(zeffyScript);
+        };
+
+    }, []);
 
     return(
         <main className="relative min-h-screen overflow-y-auto no-scrollbar flex items-center justify-center py-12 lg:py-0">
@@ -54,6 +72,31 @@ export default function Donate(){
                     </p>
                 </motion.div>
 
+                <motion.div 
+                className="w-full lg:w-[50%]"
+                {...fadeRight}
+            >
+                <div className="w-full min-h-[520px] rounded-3xl overflow-hidden bg-[#04143d] isolate relative">
+                    <div data-zeffy-embed data-form-url="/embed/donation-form/support-our-mission-194"></div>
+                    
+                    <div data-zeffy-embed-fallback style={{ display: "none" }}>
+                        <div style={{ position: "relative", overflow: "hidden", height: "520px", width: "100%" }}>
+                            <iframe 
+                                title="Donation form powered by Zeffy" 
+                                style={{ position: "absolute", border: "0", top: "0", left: "0", bottom: "0", right: "0", width: "100%", height: "100%" }} 
+                                data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/support-our-mission-194" 
+                                allow="payment"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+
+
+            {/*Built in Donate form with Popup Link*/}
+            {/*FOR THIS TO WORK UNCOMMENT THE POP UP VARIABLES/PARAMETERS AT THE TOP OF THE CODE*/}
+            
+            {/* 
                 <motion.div 
                     className="w-full lg:w-[50%] relative h-auto transform-gpu will-change-transform bg-[#1C1C28] rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col"
                     {...fadeRight}
@@ -134,6 +177,8 @@ export default function Donate(){
                             Continue to Secure Payment
                         </CtaButton>
                 </motion.div>
+
+                */}
 
             </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer(){
     return(
-        <footer className="w-full lg:w-[95%] flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between px-6 md:px-10 lg:px-16 py-10 lg:py-12 gap-8 lg:gap-0 bg-black text-white">
+        <footer className="w-full flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between px-6 md:px-10 lg:px-16 py-10 lg:py-12 gap-8 lg:gap-0 bg-black text-white">
 
       <div className="flex flex-col gap-2 w-full md:w-[45%] lg:w-auto" >
         <h3 className="text-base lg:text-lg text-[#2683EB] font-bold mb-1 lg:mb-2">Young Muslims</h3>
