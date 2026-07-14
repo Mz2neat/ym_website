@@ -26,6 +26,7 @@ export default function LoginPage() {
       router.refresh();
     }
   }
+  
 
   return (
     <div style={{ maxWidth: 360, margin: "80px auto", display: "flex", flexDirection: "column", gap: 12, padding: 20 }}>
@@ -35,17 +36,24 @@ export default function LoginPage() {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => { if (e.key === "Enter") handleLogin(); }}
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        onKeyDown={(e) => { if (e.key === "Enter") handleLogin(); }}
       />
       {error && <p style={{ color: "red" }}>{error}</p>}
       <button onClick={handleLogin} disabled={loading}>
         {loading ? "Signing in..." : "Sign in"}
       </button>
-    </div>
+    
+    <p className="text-white/50 text-sm">
+        <a href="/forgot-password" className="text-[#2683EB]">Forgot your password?</a>
+      </p>
+
+      </div>
   );
 }

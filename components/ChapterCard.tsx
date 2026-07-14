@@ -7,8 +7,8 @@ import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
 
 type Chapter = {
-    id: string;
-    name: string;
+    chapter_id: string;
+    chapter_name: string;
     description: string;
     image_name: string;
 };
@@ -16,7 +16,7 @@ type Chapter = {
 export default function ChapterCard ({ chapter }: { chapter: Chapter }){
     return(
         <motion.div
-        key={chapter.id}
+        key={chapter.chapter_id}
         className="overflow-hidden bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl flex flex-col min-h-[40vh] w-[90%] mx-auto lg:mx-0 lg:w-[80%] lg:ml-32 mt-8 lg:mt-16"
         {...fadeUp}
       >
