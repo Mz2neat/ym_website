@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, User } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Mail, User, Search} from "lucide-react";
+import { useState, useEffect, Suspense } from "react";
 import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
-import {supabase} from "@/lib/supabase/public";
-import {useSearchParams} from "next/navigation";
+import { supabase } from "@/lib/supabase/public";
+import { useSearchParams } from "next/navigation";
 
-export default function Contact(){
+function ContactFormContent(){
 
     const searchParams = useSearchParams();
 
@@ -73,6 +73,7 @@ export default function Contact(){
 
     };
 
+
     return(
         <main className="relative min-h-screen mb-16 lg:mb-32 overflow-x-hidden">
         
@@ -95,7 +96,7 @@ export default function Contact(){
                 <Link href="/findYourNeighbourNet" className="w-full">
                     <CtaButton variant="solid" className="text-white rounded-xl text-lg lg:text-xl px-4 lg:px-6 py-3 lg:py-4 w-full flex items-center justify-between">
                         <span>Find your NeighbourNet</span>
-                        <span>🔍</span>
+                        <Search/>
                     </CtaButton>
                 </Link>
             </motion.div>
@@ -205,3 +206,11 @@ export default function Contact(){
         </main>
     );
 }
+
+    export default function ContactPage() {
+        return(
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading contact form...</div>}>
+            <ContactFormContent />
+        </Suspense>
+        )
+    }
