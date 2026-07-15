@@ -25,10 +25,8 @@ export default async function ourReach(){
       <div className="flex flex-col lg:flex-row justify-between items-start w-full px-4 lg:px-0 lg:pr-32 relative gap-12 lg:gap-0 mt-8 lg:mt-0">
       
       <div className="flex flex-col w-full lg:w-[60%]">
-      {chapters?.map((chapter) =>(
-
-        <ChapterCard key={chapter.chapter_id} chapter={chapter}/>
-
+      {chapters?.map((chapter, index) =>(
+          <ChapterCard key={chapter.id || index} chapter={chapter}/>
       ))}
       </div>
 

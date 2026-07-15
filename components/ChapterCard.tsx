@@ -32,7 +32,7 @@ export default function ChapterCard ({ chapter }: { chapter: Chapter }){
         {chapter.description}
         </p>
         <div className="flex justify-center mb-4 relative z-15">
-            <Link href="/contact">
+            <Link href={`/contact?${chapter.chapter_name}`}>
             <CtaButton variant="outline" className="text-white rounded-2xl text-lg md:text-xl lg:text-2xl mt-6 lg:mt-10 px-6 lg:px-8 py-3 lg:py-4">
               Contact
             </CtaButton>

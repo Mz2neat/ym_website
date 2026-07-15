@@ -22,23 +22,34 @@ export default function about() {
           <h1 className="text-center lg:text-left lg:ml-16 pt-10 font-medium text-[#2683EB] text-lg lg:text-xl">
             What is Young Muslims
           </h1>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-center text-white tracking-tight font-semibold font-Josefin mt-6 lg:mt-8 mb-1 max-w-[90%] lg:max-w-2xl mx-auto">
-           {"YM is not just another youth group".split(" ").map((word, index) => (
-              <motion.span
-              key={1}
+          <h1 className="whitespace-nowrap px-4 text-[clamp(1.1rem,5.2vw,4.5rem)] text-center text-white tracking-tight font-bold font-Josefin mt-6 lg:mt-20 mb-10 mx-auto">
+  {"YM is not just another youth group".split(" ").map((word, index) => (
+    <motion.span
+      key={index}
+      className="inline-block mr-[0.25em]"
+      initial={{ opacity: 0, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.08, duration: 1, ease: "easeOut" }}
+    >
+      {word}
+    </motion.span>
+  ))}
+</h1>
+          <h1 className="text-base md:text-xl lg:text-2xl text-center text-white font-medium mt-10 lg:mt-170 max-w-[95%] lg:max-w-[85%] mx-auto">
+            {"YM is A community where meaningful experiences, friendships, and faith naturally connect" .split(" ").map((word, index) => (
+          <motion.h1
+              
               className="inline-block mr-[0.25em]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
+              transition={{ delay: 0.08, duration: 1, ease: "easeOut" }}
             >
               {word}
-            </motion.span>
+            </motion.h1>
 
             ))}
-          </h1>
-          <h1 className="text-base md:text-xl lg:text-2xl text-center text-white font-medium mt-10 lg:mt-12 max-w-[95%] lg:max-w-[85%] mx-auto">
-            YM is A community where meaningful experiences, friendships, and faith naturally connect.
           </h1>
         </div>
 
