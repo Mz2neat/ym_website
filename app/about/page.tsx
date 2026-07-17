@@ -1,10 +1,24 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Activities from "@/components/Activities-about";
 
 export default function about() {
+  const [locked, setLocked] = useState(false);
+
+  function lockScrollUntilRevealed() {
+    if (locked) return;
+    setLocked(true);
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+    setTimeout(() => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    }, 1300);
+  }
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-[#000010] mb-16 lg:mb-32">
 
@@ -36,21 +50,22 @@ export default function about() {
     </motion.span>
   ))}
 </h1>
-          <h1 className="text-base md:text-xl lg:text-2xl text-center text-white font-medium mt-10 lg:mt-170 max-w-[95%] lg:max-w-[85%] mx-auto">
-            {"YM is A community where meaningful experiences, friendships, and faith naturally connect" .split(" ").map((word, index) => (
-          <motion.h1
-              
-              className="inline-block mr-[0.25em]"
-              initial={{ opacity: 0, filter: "blur(6px)" }}
-              whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08, duration: 1, ease: "easeOut" }}
-            >
-              {word}
-            </motion.h1>
-
-            ))}
-          </h1>
+          <motion.div onViewportEnter={lockScrollUntilRevealed} viewport={{ once: true, amount: 0.3 }}>
+            <h1 className="px-4 text-[clamp(1rem,3.2vw,2.25rem)] text-center text-white font-semibold mt-10 lg:mt-170 max-w-[95%] lg:max-w-[85%] mx-auto">
+              {"YM is A community where meaningful experiences, friendships, and faith naturally connect".split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block mr-[0.25em]"
+                  initial={{ opacity: 0, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08, duration: 1, ease: "easeOut" }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </h1>
+          </motion.div>
         </div>
 
         <section className="relative z-20 px-4 lg:px-8 py-10 lg:py-20">
