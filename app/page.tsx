@@ -14,9 +14,9 @@ export default function Home(){
     <main className="relative z-15 min-h-screen overflow-y-auto no-scrollbar">
       <div className="relative z-15">
       <h1 className="text-[#2683EB] ml-4 lg:ml-32 mt-16 text-lg md:text-xl lg:text-2xl">WELCOME TO YOUNG MUSLIMS</h1>
-      <h1 className="text-white ml-4 lg:ml-32 mt-5 text-4xl md:text-6xl lg:text-8xl max-w-4xl md:max-w-4xl lg:max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
-      <h1 className="ml-4 lg:ml-32 mt-10 text-lg lg:text-2xl font-medium">A community for growth, knowledge, and positive change.</h1>
-      <h1 className="ml-4 lg:ml-32 text-lg lg:text-2xl font-medium">Join us in building a stronger Ummah</h1>
+      <h1 className="text-white ml-4 pr-4 lg:pr-0 lg:ml-32 mt-5 text-4xl md:text-6xl lg:text-8xl max-w-4xl font-bold">Empowering Young Muslims. Inspiring Tomorrow.</h1>
+      <h1 className="ml-4 pr-4 lg:pr-0 lg:ml-32 mt-10 text-lg lg:text-2xl font-medium">A community for growth, knowledge, and positive change.</h1>
+      <h1 className="ml-4 pr-4 lg:pr-0 lg:ml-32 text-lg lg:text-2xl font-medium">Join us in building a stronger Ummah</h1>
       </div>
       {/*Gradient Image in Background*/}
       <div className="absolute top-0 right-0 w-full h-[50vh] md:w-[70vw] lg:h-[100vh] lg:w-[70vw] overflow-hidden">
@@ -45,25 +45,24 @@ export default function Home(){
       {/*Mission Statement and Vision Statement*/}
 
 
-      <motion.div className="relative z-15 bg-black border border-3 border-[#2683EB] mt-32 mx-auto bg-blue h-auto w-[85%] max-w-9xl rounded-xl mb-32 flex" {...fadeUp}>
-        
+      <motion.div className="relative z-15 bg-black border border-3 border-[#2683EB] mt-32 mx-auto bg-blue h-auto w-[85%] max-w-9xl rounded-xl mb-32 flex flex-col md:flex-row" {...fadeUp}>
+
         <div className="mx-auto"> {/*Mission Statement and vision statment starting */  }
-          <div className="text-[#2683EB] ml-2 lg:ml-16 mt-5 text-xl font-medium">
+          <div className="text-[#2683EB] ml-4 lg:ml-16 mt-5 text-lg md:text-xl font-medium">
           Our Vision
           </div>
-          <div className="ml-2 lg:ml-2 lg:ml-16 max-w-128 text-xl font-medium mb-8">
-            
+          <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
+
           Canadian Muslim youth collectively contributing to the betterment of society with God-consciousness and a firm understanding of their Muslim identity.
           </div>
           </div>
-          <div className="w-1 h-28 bg-gray-600 my-auto rounded-lg">
-            {/*empty div for line*/}
+          <div className="hidden md:block w-1 h-28 bg-gray-600 my-auto rounded-lg shrink-0">
           </div>
           <div className="mx-auto">
-          <div className="text-[#2683EB] ml-2 lg:ml-16 mt-5 text-xl font-medium">
+          <div className="text-[#2683EB] ml-4 lg:ml-16 mt-5 text-lg md:text-xl font-medium">
           Our Mission
           </div>
-          <div className="ml-2 lg:ml-16 max-w-128 text-xl font-medium mb-8">
+          <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
           Mentoring Muslim youth through companionship, education, and service, Young Muslims seek the pleasure of Allah (SWT).
           </div>
           </div>
@@ -72,30 +71,30 @@ export default function Home(){
       {/*Counting Stats*/}
 
       <div className="mb-32 grid grid-cols-3 w-[90%] max-w-8xl mx-auto relative z-15">
-      <div className="flex flex-col items-center justify center text-center">
-      <div className="font-bold text-6xl">
+      <div className="flex flex-col items-center justify-center text-center">
+      <div className="font-bold text-2xl md:text-4xl lg:text-6xl">
         <CountUp end={750} duration={2.5} enableScrollSpy scrollSpyOnce/>
       +
       </div>
-      <div className="font-bold text-6xl">
+      <div className="font-bold text-lg md:text-3xl lg:text-5xl">
       Members
       </div>
       </div>
-      
-      <div className="flex flex-col items-center justify center text-center">
-      <div className="font-bold text-6xl">
+
+      <div className="flex flex-col items-center justify-center text-center">
+      <div className="font-bold text-2xl md:text-4xl lg:text-6xl">
       <CountUp end={3752} duration={2.5} enableScrollSpy scrollSpyOnce/>+
       </div>
-      <div className="font-bold text-6xl">
+      <div className="font-bold text-lg md:text-3xl lg:text-5xl">
       Funds Raised
       </div>
       </div>
 
-      <div className="flex flex-col items-center justify center text-center">
-      <div className="font-bold text-6xl">
+      <div className="flex flex-col items-center justify-center text-center">
+      <div className="font-bold text-2xl md:text-4xl lg:text-6xl">
       <CountUp end={12} duration={2.5} enableScrollSpy scrollSpyOnce/>+
       </div>
-      <div className="font-bold text-6xl">
+      <div className="font-bold text-lg md:text-3xl lg:text-5xl">
       Locations
       </div>
       </div>

@@ -29,7 +29,7 @@ export default function LoginPage() {
   
 
   return (
-    <div style={{ maxWidth: 360, margin: "80px auto", display: "flex", flexDirection: "column", gap: 12, padding: 20 }}>
+    <div className="max-w-sm mx-auto mt-20 px-5 flex flex-col gap-3">
       <h1>Admin Login</h1>
       <input
         type="email"

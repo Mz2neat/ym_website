@@ -32,7 +32,7 @@ export default function Activities(){
         </div>
         </div>
 
-              <div className="absolute top-0 right-0 w-full lg:w-[1300px] h-[50vh] lg:h-screen overflow-hidden">
+              <div className="absolute top-0 right-0 w-full lg:w-[55vw] h-[50vh] lg:h-screen overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,#000010_70%)] z-10">
               </div>
               <Image className="object-cover object-left scale-100" src="/images/YMRetreat.jpeg" fill alt="Background Image"/>
