@@ -1,18 +1,27 @@
 import {supabase} from "@/lib/supabase/public";
 import ChapterCard from "@/components/ChapterCard";
-import InteractiveMap from "@/components/InteractiveMap";
+import MapWrapper from "@/components/MapWrapper";
 
 export const dynamic = "force-dynamic";
 
 export default async function ourReach(){
 
-  const { data: chapters, error } = await supabase
+  const { data: chapters, error: chaptersError } = await supabase
   .from('chapters')
   .select('*')
 
-  if (error){
-    console.error("Error Fetching Chapters:", error);
+  const { data: neighbournets, error: netsError } = await supabase
+  .from('neighbournets')
+  .select('*')
+
+  if (chaptersError){
+    console.error("Error Fetching Chapters:", chaptersError);
   return <div>Failed to load Chapters.</div>;
+}
+
+ if (netsError){
+    console.error("Error Fetching NeighbourNets:", netsError);
+  return <div>Failed to load NeighbourNets.</div>;
 }
   return (
 
@@ -31,7 +40,7 @@ export default async function ourReach(){
       </div>
 
       <div className="w-full lg:w-[50%] relative lg:sticky lg:top-32 mt-2 lg:mt-16 z-10">
-      <InteractiveMap/>
+      <MapWrapper neighbournets={neighbournets}/>
       </div>
 
       </div>
