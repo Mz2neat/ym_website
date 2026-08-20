@@ -47,26 +47,35 @@ export default function Home(){
 
       <motion.div className="relative z-15 bg-black border border-3 border-[#2683EB] mt-32 mx-auto bg-blue h-auto w-[85%] max-w-9xl rounded-xl mb-32 flex flex-col md:flex-row" {...fadeUp}>
 
-        <div className="mx-auto"> {/*Mission Statement and vision statment starting */  }
-          <div className="text-[#2683EB] ml-4 lg:ml-16 mt-5 text-lg md:text-xl font-medium">
-          Our Vision
-          </div>
-          <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
+        <section className="rounded-2xl border border-[#2683EB] px-8 py-12 md:px-12 lg:px-16">
+  <div className="grid grid-cols-1 gap-10 md:grid-cols-5 md:gap-0 md:divide-x md:divide-gray-600">
 
-         Our vision is to create a sustainable system where Muslim youth are rooted in faith, nurtured by prophetic traditions, and empowered to lead while addressing contemporary challenges with modern tools.
-          </div>
-          </div>
-          <div className="hidden md:block w-1 h-28 bg-gray-600 my-auto rounded-lg shrink-0">
-          </div>
-          <div className="mx-auto">
-          <div className="text-[#2683EB] ml-4 lg:ml-16 mt-5 text-lg md:text-xl font-medium">
-          Our Mission
-          </div>
-          <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
-          Young Muslims mentor Muslim youth through companionship, education, and service - nurturing their God-consciousness (taqwa) - so that Canadian Muslim youth can collectively contribute to the betterment of society with a firm understanding of their Muslim identity and a commitment to the pleasure of Allah (SWT).
+    <div className="md:col-span-2 md:pr-10 lg:pr-14">
+      <h2 className="mb-3 text-lg font-medium text-[#2683EB] md:text-xl">
+        Our Vision
+      </h2>
+      <p className="text-pretty text-base font-medium leading-relaxed md:text-lg">
+        Our vision is to create a sustainable system where Muslim youth are rooted
+        in faith, nurtured by prophetic traditions, and empowered to lead while
+        addressing contemporary challenges with modern tools.
+      </p>
+    </div>
 
-          </div>
-          </div>
+    <div className="md:col-span-3 md:pl-10 lg:pl-14">
+      <h2 className="mb-3 text-lg font-medium text-[#2683EB] md:text-xl">
+        Our Mission
+      </h2>
+      <p className="text-pretty text-base font-medium leading-relaxed md:text-lg">
+        Young Muslims mentor Muslim youth through companionship, education, and
+        service, nurturing their God-consciousness (taqwa) so that Canadian
+        Muslim youth can collectively contribute to the betterment of society with
+        a firm understanding of their Muslim identity and a commitment to the
+        pleasure of Allah (SWT).
+      </p>
+    </div>
+
+  </div>
+</section>
       </motion.div>
       
       {/*Counting Stats*/}
