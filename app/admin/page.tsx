@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "./logoutbutton";
 import MembersManager from "./MembersManager";
 import ChapterManager from "./ChapterManager";
+import AdminManager from "./AdminManager";
 
 export default async function AdminPage() {
   const supabase = await createClient();
@@ -20,6 +21,7 @@ export default async function AdminPage() {
 
   const accessLevel = adminRow?.access_level ?? "unknown";
   const isNational = accessLevel === "national";
+  
 
   return (
     <div className="text-white">
@@ -38,7 +40,12 @@ export default async function AdminPage() {
 
       <MembersManager />
 
-      {isNational && <ChapterManager />}
+      {isNational && (
+        <>
+          <ChapterManager />
+          <AdminManager />
+        </>
+      )}
     </div>
   );
 }

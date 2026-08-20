@@ -99,7 +99,7 @@ export default function SignupPage() {
 }
  function Rule({ ok, children }: { ok: boolean; children: React.ReactNode }) {
   return (
-    <li className={ok ? "text-green-400" : "text-white/40"}>
+    <li className={ok ? "text-green-400" : "text-white/80"}>
       {ok ? "✓" : "○"} {children}
     </li>
   );

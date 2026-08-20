@@ -53,7 +53,7 @@ export default function Home(){
           </div>
           <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
 
-          Canadian Muslim youth collectively contributing to the betterment of society with God-consciousness and a firm understanding of their Muslim identity.
+         Our vision is to create a sustainable system where Muslim youth are rooted in faith, nurtured by prophetic traditions, and empowered to lead while addressing contemporary challenges with modern tools.
           </div>
           </div>
           <div className="hidden md:block w-1 h-28 bg-gray-600 my-auto rounded-lg shrink-0">
@@ -63,7 +63,8 @@ export default function Home(){
           Our Mission
           </div>
           <div className="ml-4 lg:ml-16 max-w-128 text-base md:text-xl font-medium mb-8 pr-4">
-          Mentoring Muslim youth through companionship, education, and service, Young Muslims seek the pleasure of Allah (SWT).
+          Young Muslims mentor Muslim youth through companionship, education, and service - nurturing their God-consciousness (taqwa) - so that Canadian Muslim youth can collectively contribute to the betterment of society with a firm understanding of their Muslim identity and a commitment to the pleasure of Allah (SWT).
+
           </div>
           </div>
       </motion.div>
