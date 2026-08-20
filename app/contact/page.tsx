@@ -9,17 +9,18 @@ import CtaButton from "@/components/CtaButton";
 import { fadeUp } from "@/lib/motion";
 import { supabase } from "@/lib/supabase/public";
 import { useSearchParams } from "next/navigation";
+import { submitSecureForm } from "./actions"; 
 
 function ContactFormContent(){
 
     const searchParams = useSearchParams();
-
     const urlChapterName = searchParams.keys().next().value;
 
     const [result, setResult] = useState("Submit");
     const [chapters, setChapters] = useState<any[]>([]);
 
-    const [selectedKey, setSelectedKey] = useState("35944dc-5376-4a7f-a344-e49bdbc5b9ec");
+    const [selectedChapter, setSelectedChapter] = useState("National");
+    const [errors, setErrors] = useState<Record<string, string[]>>({});
 
     useEffect(() => {
         const fetchChapters = async () => {
@@ -27,13 +28,11 @@ function ContactFormContent(){
             if (data){
                 setChapters(data);
                 const matchedChapter = data.find((chapter) => (
-                                chapter.chapter_name.toLowerCase() === (urlChapterName?.toLowerCase())
-
-                            ))
-                            if (matchedChapter)
-                            {
-                            setSelectedKey(matchedChapter.contact_access_id);
-                            }
+                    chapter.chapter_name.toLowerCase() === (urlChapterName?.toLowerCase())
+                ));
+                if (matchedChapter) {
+                    setSelectedChapter(matchedChapter.chapter_name);
+                }
             }
             else if (error){
                 console.error("Error fethching chapters:", error);
@@ -42,37 +41,59 @@ function ContactFormContent(){
         fetchChapters();
     }, [urlChapterName]);
 
-
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setResult("Sending...");
+        const form = event.currentTarget; 
+        setResult("Verifying and Sending...");
 
-        const formData = new FormData(event.currentTarget);
+        const formData = new FormData(form);
 
-        formData.append("access_key", selectedKey);
-
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method:"POST",
-            body: formData
-
-        });
+        const originalMessage = formData.get("message") as string;
+        const finalMessage = `For YM ${selectedChapter}\n\n${originalMessage}`;
         
-        const data = await response.json();
+        formData.set("message", finalMessage);
 
-        if (data.success)
-        {
-            setResult("Form Submitted Successfully");
-            event.currentTarget.reset();
+        const result = await submitSecureForm(formData);
 
+        if (!result.success) {
+            console.log("Validation Errors:", result.details);
+            setResult(result.error || "validation failed");
+            if (result.details) {
+                setErrors(result.details);
+            } else {
+                setErrors({});
+            }
+            return; 
         }
-        else
-        {
-            console.log("Error", data);
-            setResult(data.message);
-        }
 
+        setErrors({});
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    access_key: "335944dc-5376-4a7f-a344-e49bdbc5b9ec",
+                    ...result.safeData, 
+                    message: finalMessage 
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Form sent successfully");
+                form.reset();
+            } else {
+                setResult(data.message);
+            }
+        } catch (error) {
+            setResult("Network error sending email");
+        }
     };
-
 
     return(
         <main className="relative min-h-screen mb-16 lg:mb-32 overflow-x-hidden">
@@ -109,62 +130,73 @@ function ContactFormContent(){
                     <p className="text-gray-400 text-sm mb-2">Who do you want to contact?</p>
                     
                     <select
-                    value={selectedKey}
-                    onChange={(e) => setSelectedKey(e.target.value)}
-                    className="bg-[#000010]/80 border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] mb-2 appearance-none cursor-pointer">
-                    
-                    <option value="335944dc-5376-4a7f-a344-e49bdbc5b9ec" className="bg-[#000010]">
+                        value={selectedChapter}
+                        onChange={(e) => setSelectedChapter(e.target.value)}
+                        className="bg-[#000010]/80 border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] mb-2 appearance-none cursor-pointer"
+                    >
+                        <option value="National" className="bg-[#000010]">
                             YM National (General Inquiry)
                         </option>
 
                         {chapters.map((chapter) => (
-                            chapter.contact_access_id && (
-                                <option key = {chapter.chapter_name} value={chapter.contact_access_id} className="bg-[#000010]">
+                            chapter.chapter_name && (
+                                <option key={chapter.chapter_name} value={chapter.chapter_name} className="bg-[#000010]">
                                     YM {chapter.chapter_name}
-                                    </option>
+                                </option>
                             )
                         ))}
-                        </select>
+                    </select>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input 
-                            type="text" 
-                            name="name"
-                            required
-                            placeholder="Name" 
-                            className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
-                        />
-                        <input 
-                            type="email" 
-                            name="email"
-                            required
-                            placeholder="Email" 
-                            className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
-                        />
+                        <div className="flex flex-col w-full">
+                            <input 
+                                type="text" 
+                                name="name"
+                                required
+                                placeholder="Name" 
+                                className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
+                            />
+                            {errors.name && <p className="text-red-500 text-xs mt-1 ml-1 text-left">{errors.name[0]}</p>}
+                        </div>
+                        
+                        <div className="flex flex-col w-full">
+                            <input 
+                                type="email" 
+                                name="email"
+                                required
+                                placeholder="Email" 
+                                className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
+                            />
+                            {errors.email && <p className="text-red-500 text-xs mt-1 ml-1 text-left">{errors.email[0]}</p>}
+                        </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input 
                             type="text" 
-                            name="City"
+                            name="city"
                             required
                             placeholder="City" 
                             className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
                         />
                         <input 
                             type="text" 
+                            name="postalCode"
                             placeholder="Postal Code" 
                             className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] placeholder:text-gray-500" 
                         />
                     </div>
                     
-                    <textarea
-                        name="Message"
-                        required
-                        placeholder="Message" 
-                        rows={5} 
-                        className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] resize-none placeholder:text-gray-500"
-                    ></textarea>
+                    <div className="flex flex-col w-full">
+                        <textarea
+                            name="message" 
+                            required
+                            placeholder="Message" 
+                            rows={5} 
+                            className="bg-transparent border border-[#2683EB] rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-[#2683EB] resize-none placeholder:text-gray-500"
+                        ></textarea>
+                        {errors.message && <p className="text-red-500 text-xs mt-1 ml-1 text-left">{errors.message[0]}</p>}
+                    </div>
                     
                     <CtaButton
                         type="submit"
@@ -207,10 +239,10 @@ function ContactFormContent(){
     );
 }
 
-    export default function ContactPage() {
-        return(
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading contact form...</div>}>
+export default function ContactPage() {
+    return(
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading contact form...</div>}>
             <ContactFormContent />
         </Suspense>
-        )
-    }
+    )
+}
