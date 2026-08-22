@@ -9,6 +9,7 @@ export default async function ourReach(){
   const { data: chapters, error: chaptersError } = await supabase
   .from('chapters')
   .select('*')
+  .order('display_order', { ascending: true })
 
   const { data: neighbournets, error: netsError } = await supabase
   .from('neighbournets')
