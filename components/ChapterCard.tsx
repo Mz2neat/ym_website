@@ -25,7 +25,7 @@ export default function ChapterCard ({ chapter }: { chapter: Chapter }){
         </h1>
         <div className="relative flex flex-col lg:flex-row flex-1 min-h-[125px] pb-6 lg:pb-8">
         <div className="relative w-[90%] lg:w-[40%] h-48 lg:h-auto mx-auto lg:mx-0 lg:ml-6 mb-6 lg:mb-0">
-        <Image className="object-cover rounded-lg" src={`/images/${chapter.image_name}`} fill alt="Sports"></Image>
+        <Image className="object-cover rounded-lg" src={`/images/${chapter.image_name}`} fill alt="ChapterImage"></Image>
         </div>
         <div className="w-full lg:w-[60%] px-6">
         <p className="text-white text-base md:text-lg lg:text-xl text-center lg:text-left">

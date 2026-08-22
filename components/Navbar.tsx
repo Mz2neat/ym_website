@@ -30,11 +30,11 @@ export default function Navbar(){
 
                     <div className="absolute left-0 top-full mt-2 w-56 rounded-xl bg-[#0B0F14]/95 backdrop-blur-md border-[2px] border-[#2683EB] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 shadow-[0_10px_30px_rgba(38,131,235,0.15)] z-50">
                         <div className="flex flex-col py-3">
-                            <Link href="/ourReach" className="px-6 py-3 text-white text-lg hover:bg-[#2683EB]/20 hover:text-[#2683EB] transition-colors">
+                            <Link href="/ourReach" className="px-6 py-3 text-white text-lg hover:text-[#2683EB] transition-colors">
                             Our Reach
                             </Link>
 
-                            <Link href="/halaqahs" className="px-6 py-3 text-white text-lg hover:bg-[#2683EB]/20 hover:text-[#2683EB] transition-colors">
+                            <Link href="/halaqahs" className="px-6 py-3 text-white text-lg hover:text-[#2683EB] transition-colors">
                             Halaqahs
                             </Link>
                         </div>
@@ -53,7 +53,7 @@ export default function Navbar(){
 
                     <div className="absolute left-0 top-full mt-2 w-56 rounded-xl bg-[#0B0F14]/95 backdrop-blur-md border-[2px] border-[#2683EB] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 shadow-[0_10px_30px_rgba(38,131,235,0.15)] z-50">
                         <div className="flex flex-col py-3">
-                            <Link href="/findYourNeighbourNet" className="px-6 py-3 text-white text-lg hover:bg-[#2683EB]/20 hover:text-[#2683EB] transition-colors">
+                            <Link href="/findYourNeighbourNet" className="px-6 py-3 text-white text-lg hover:text-[#2683EB] transition-colors">
                             Find your NeighbourNet
                             </Link>
 
