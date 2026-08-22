@@ -18,9 +18,13 @@ export default function AdminManager() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [addChapterFor, setAddChapterFor] = useState<Record<string, string>>({});
-
+  const [myId, setMyId] = useState<string | null>(null);
+  
   async function load() {
     setError(null);
+    const { data: userData } = await supabase.auth.getUser();
+    setMyId(userData.user?.id ?? null);
+
     const [acc, ch] = await Promise.all([
       supabase.rpc("list_accounts"),
       supabase.from("chapters").select("chapter_id, chapter_name").order("chapter_name"),
