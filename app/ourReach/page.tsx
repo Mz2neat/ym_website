@@ -1,6 +1,7 @@
 import {supabase} from "@/lib/supabase/public";
 import ChapterCard from "@/components/ChapterCard";
 import MapWrapper from "@/components/MapWrapper";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,9 @@ export default async function ourReach(){
   return (
 
     <main className="min-h-screen mb-16 lg:mb-32 overflow-x-hidden">
+      
+      <ScrollToTop />
+
       <div className="relative z-20 mt-8 lg:mt-16 text-center lg:text-left">
           <h1 className="text-[#2683EB] mx-4 lg:mx-0 lg:ml-32 text-lg lg:text-xl">Welcome to YM Chapters</h1>
           <h1 className="text-white mx-4 lg:mx-0 py-2 lg:py-4 text-3xl max-w-5xl md:text-4xl lg:text-5xl lg:ml-32 font-semibold font-Josefin">Our Reach</h1>
@@ -36,7 +40,7 @@ export default async function ourReach(){
       
       <div className="flex flex-col w-full lg:w-[60%]">
       {chapters?.map((chapter, index) =>(
-          <ChapterCard key={chapter.id || index} chapter={chapter}/>
+          <ChapterCard key={chapter.id || index} chapter={chapter} index={index}/>
       ))}
       </div>
 

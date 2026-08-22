@@ -10,6 +10,7 @@ import { fadeUp } from "@/lib/motion";
 import { supabase } from "@/lib/supabase/public";
 import { useSearchParams } from "next/navigation";
 import { submitSecureForm } from "./actions"; 
+import ScrollToTop from "@/components/ScrollToTop";
 
 function ContactFormContent(){
 
@@ -48,11 +49,6 @@ function ContactFormContent(){
 
         const formData = new FormData(form);
 
-        const originalMessage = formData.get("message") as string;
-        const finalMessage = `For YM ${selectedChapter}\n\n${originalMessage}`;
-        
-        formData.set("message", finalMessage);
-
         const result = await submitSecureForm(formData);
 
         if (!result.success) {
@@ -67,6 +63,9 @@ function ContactFormContent(){
         }
 
         setErrors({});
+
+        const originalMessage = result.safeData?.message || "";
+        const finalMessage = `For YM ${selectedChapter}\n\n${originalMessage}`;
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -241,8 +240,13 @@ function ContactFormContent(){
 
 export default function ContactPage() {
     return(
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading contact form...</div>}>
-            <ContactFormContent />
-        </Suspense>
+        <>
+            {/* Placed OUTSIDE of Suspense so it fires immediately without waiting for the fallback to clear! */}
+            <ScrollToTop />
+            
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading contact form...</div>}>
+                <ContactFormContent />
+            </Suspense>
+        </>
     )
 }

@@ -10,7 +10,6 @@ const customIcon = L.icon({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
-
 });
 
 export default function CustomMap({ neighbournets }: { neighbournets: any[] }) {
@@ -21,6 +20,7 @@ export default function CustomMap({ neighbournets }: { neighbournets: any[] }) {
         <MapContainer 
             center={[56.1304, -106.3468]} 
             zoom={4} 
+            scrollWheelZoom={false} // FIX: Prevents the map from hijacking the mouse wheel while scrolling the page
             style={{ height: "100%", width: "100%" }}
         >
 
@@ -54,6 +54,4 @@ export default function CustomMap({ neighbournets }: { neighbournets: any[] }) {
         </MapContainer>
     </div>
   );
-
 }
-
