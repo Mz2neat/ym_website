@@ -30,7 +30,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} ${josefin.variable} h-full antialiased`}
     >
-      <body className="bg-[#000010] text-white min-h-full flex flex-col"><Navbar />{children}<Footer /></body>
+      <body suppressHydrationWarning className="bg-[#000010] text-white min-h-full flex flex-col">
+  <Navbar />
+  {children}
+  <Footer />
+</body>
     </html>
   );
 }

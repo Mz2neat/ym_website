@@ -1,12 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Activities from "@/components/Activities-about";
+import { supabase } from "@/lib/supabase/public";
 
 export default function about() {
   const [locked, setLocked] = useState(false);
+  const [leads, setLeads] = useState<any[]>([]);
+
+  // Fetches the Shura members from Supabase on page load
+  useEffect(() => {
+    const fetchLeads = async () => {
+      const { data, error } = await supabase
+        .from('shura_members')
+        .select('*')
+        .order('created_at', { ascending: true }); 
+
+      if (data) {
+        setLeads(data);
+      } else if (error) {
+        console.error("Error fetching Shura members:", error);
+      }
+    };
+    fetchLeads();
+  }, []);
 
   function lockScrollUntilRevealed() {
     if (locked) return;
@@ -262,8 +281,74 @@ export default function about() {
           <Activities/>
         </div>
 
-      </section>
+        {/* --- NEW LEADERSHIP SECTION --- */}
+        <div className="mt-20 lg:mt-32">
+            <div className="text-center">
+                <motion.div
+                  className="mx-auto mb-6 h-1 w-48 lg:w-300 rounded-full bg-[#2683EB]"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  whileInView={{ scaleX: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  style={{ originX: 0.5 }}
+                />
+                <motion.h2
+                  className="mt-8 lg:mt-14 text-3xl md:text-4xl lg:text-5xl font-semibold font-Josefin text-white tracking-tight px-4 lg:px-0"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                >
+                  Meet Our Leadership
+                </motion.h2>
+                <motion.p
+                  className="mt-4 text-gray-400 max-w-2xl mx-auto px-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  The dedicated Shura members driving the mission and vision of Young Muslims forward.
+                </motion.p>
+            </div>
 
+            {/* Member Cards Grid */}
+            <motion.div
+                className="mx-auto mt-12 grid max-w-[95%] lg:max-w-[85%] gap-8 sm:grid-cols-2 lg:grid-cols-3"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
+            >
+                {leads.map((lead) => (
+                    <motion.div
+                        key={lead.id}
+                        className="relative overflow-hidden bg-[#000010]/50 backdrop-blur-md border-[3px] border-[#2683EB] rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center"
+                        variants={{
+                            hidden: { opacity: 0, y: 40 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                        }}
+                    >
+                        <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-[#2683EB] shrink-0">
+                            <Image
+                                src={`/images/${lead.image_name}`}
+                                alt={lead.name}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 128px, 128px"
+                            />
+                        </div>
+                        <h3 className="text-xl lg:text-2xl font-bold text-white">{lead.name}</h3>
+                        <p className="text-[#2683EB] font-semibold mt-1 mb-4 uppercase tracking-wider text-sm">{lead.position}</p>
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                            {lead.description}
+                        </p>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </div>
+
+      </section>
     </main>
   );
 }
